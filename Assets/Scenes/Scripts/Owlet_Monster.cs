@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Owlet_Monster : MonoBehaviour
@@ -40,5 +39,5 @@ public class Owlet_Monster : MonoBehaviour
     // use an event in the movement class to check if key is pressed, then have another method that (first checks if event is not null) and Invoke based on a condition
     // make sure to use delegate for that event function
     // animator class subscribes to the event function in the movement class (Movement.someEvent += animator_function)
-    
+
 }
