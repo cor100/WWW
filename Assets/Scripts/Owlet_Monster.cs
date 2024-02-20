@@ -8,6 +8,8 @@ public class Owlet_Monster : MonoBehaviour
     private Rigidbody2D _playerRigidbody;
     private SpriteRenderer _playerSpriteRenderer;
     private Vector2 velChange = Vector2.zero;
+    public bool grounded = false;
+    public LayerMask groundMask;
     
     // Start is called before the first frame update
     void Start()
@@ -24,15 +26,37 @@ public class Owlet_Monster : MonoBehaviour
         Move();
         _playerRigidbody.velocity = velChange;
         ResetVelChange();
+        UpdateGrounding();
     }
 
     private void Move(){
         if(Input.GetKeyDown(KeyCode.RightShift)){
-            playerAnimator.SetTrigger("walk");
+            playerAnimator.SetTrigger("walk");  
         }
     }
+
+    private void Jump()
+    {
+        
+    }
+
     private void ResetVelChange(){
         velChange = new Vector2(0, _playerRigidbody.velocity.y);
+    }
+
+    private void UpdateGrounding()
+    {
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector3.down, 0.1f, groundMask);
+        Debug.DrawLine(transform.position, transform.position + Vector3.down * 0.1f, Color.red);
+        if(hit.collider != null)
+        {
+            grounded = true;
+        }
+        else
+        {
+            grounded = false;
+        }
+        
     }
 
     // separate animator and movement classes
