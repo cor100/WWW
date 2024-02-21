@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 3293851599020913698}
   - component: {fileID: 8761741482209982047}
   - component: {fileID: 5269768833294092471}
-  - component: {fileID: 4133207854981609573}
   m_Layer: 0
   m_Name: Owlet_Monster
   m_TagString: Untagged
@@ -94,7 +93,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8407511809150685185}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 1544d58e7cc294056876ff2c63f8aa75, type: 2}
   m_CullingMode: 0
@@ -107,16 +106,3 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &4133207854981609573
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8407511809150685185}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf6541bbea8784e7386da71b3bab60a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerAnimator: {fileID: 0}
