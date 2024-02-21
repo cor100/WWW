@@ -7,6 +7,7 @@ public class CharGravitySwitch : MonoBehaviour
     private Rigidbody2D characterRB2D;
     private bool isGravityBuffer;
     private CharGroundChecker groundChecker;
+    private CharacterAnimator characterAnimator;
 
     // Start is called before the first frame update
     void Start()
@@ -33,9 +34,10 @@ public class CharGravitySwitch : MonoBehaviour
     private void SwitchGravity()
     {
         characterRB2D.gravityScale *= -1;
+        // 180 flip such that the character inverts
         transform.Rotate(0, 0, 180);
-        print(characterRB2D.gravityScale);
     }
+
 
     private void CheckGravityBuffer()
     {
