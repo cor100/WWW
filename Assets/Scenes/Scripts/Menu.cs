@@ -12,7 +12,7 @@ public class Menu : MonoBehaviour
         currentChar = gameObject.GetComponent<SpriteRenderer>();
     }
     public void restart(){
-        int sceneIndex = SceneManager.GetActiveScene().buildIndex +1;
+        int sceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(sceneIndex);
     }
     public void toggleGravityIcon(){
