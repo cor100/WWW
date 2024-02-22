@@ -8,10 +8,14 @@ public class CharHorizontalMovement : MonoBehaviour
     private SpriteRenderer characterSpriteRenderer;
     private bool isWalkBuffer;
     private bool isWalking;
+
     [SerializeField] private float airMovementSpeed = 2;
     [SerializeField] private float groundMovementSpeed = 4;
+
     private CharGroundChecker groundChecker;
     private Vector2 velChange = Vector2.zero;
+
+    private CharGravityChecker charGravityChecker;
 
 
     // Start is called before the first frame update
@@ -20,6 +24,7 @@ public class CharHorizontalMovement : MonoBehaviour
         characterRB2D = GetComponent<Rigidbody2D>();
         characterSpriteRenderer = GetComponent<SpriteRenderer>();
         groundChecker = GetComponent<CharGroundChecker>();
+        charGravityChecker = GetComponent<CharGravityChecker>();
     }
 
     // Update is called once per frame
@@ -63,7 +68,14 @@ public class CharHorizontalMovement : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            characterSpriteRenderer.flipX = false;
+            if (charGravityChecker.returnGravityDown())
+            {
+                characterSpriteRenderer.flipX = false;
+            } else
+            {
+                characterSpriteRenderer.flipX = true;
+            }
+            
             if (groundChecker.returnGroundedState())
             {
                 velChange.x = groundMovementSpeed;
@@ -75,7 +87,15 @@ public class CharHorizontalMovement : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            characterSpriteRenderer.flipX = true;
+            if (charGravityChecker.returnGravityDown())
+            {
+                characterSpriteRenderer.flipX = true;
+            }
+            else
+            {
+                characterSpriteRenderer.flipX = false;
+            }
+
             if (groundChecker.returnGroundedState())
             {
                 velChange.x = -groundMovementSpeed;

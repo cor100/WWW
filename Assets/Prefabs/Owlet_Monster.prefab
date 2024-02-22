@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 589025745454783539}
   - component: {fileID: 8953725259266848697}
   - component: {fileID: 6545199655079338693}
+  - component: {fileID: 7523546683354085364}
   m_Layer: 3
   m_Name: Owlet_Monster
   m_TagString: Untagged
@@ -281,5 +282,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 012cc3537aeb8465abd24e013e0f82c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7523546683354085364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8407511809150685185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e15f3a9893f547b5967ba9b239a9514, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
