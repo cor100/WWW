@@ -5,13 +5,12 @@ using UnityEngine;
 public class CharGravityChecker : MonoBehaviour
 {
     private bool isGravityDown;
-    private CharacterAnimator characterAnimator;
     private Rigidbody2D characterRB2D;
-    //private CharGravitySwitch charGravitySwitch;
+    private static CharGravityChecker _instance;
 
     private void Start()
     {
-        characterAnimator = GetComponent<CharacterAnimator>();
+        _instance = this;
         characterRB2D = GetComponent<Rigidbody2D>();
     }
 
@@ -30,6 +29,11 @@ public class CharGravityChecker : MonoBehaviour
         {
             isGravityDown = false;
         }
+    }
+
+    public static CharGravityChecker Get()
+    {
+        return _instance;
     }
 
     public bool returnGravityDown()
