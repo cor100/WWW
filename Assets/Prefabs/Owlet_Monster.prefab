@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 7523546683354085364}
   m_Layer: 3
   m_Name: Owlet_Monster
-  m_TagString: Untagged
+  m_TagString: player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -216,7 +216,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 697d405b3fe234e568612ded29f52787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceForGroundedCheck: 0.2
+  distanceForGroundedCheck: 0.3
   groundMask:
     serializedVersion: 2
     m_Bits: 64
@@ -232,7 +232,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd1281cd1ad12496f8d92b7a5f7d2497, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 3
+  jumpForce: 3.5
 --- !u!114 &7335551033993657952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -258,8 +258,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d1ef1c1ab0574ce0bd10c2ad0504e34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  airMovementSpeed: 1
-  groundMovementSpeed: 1
+  airMovementSpeed: 2
+  groundMovementSpeed: 2
 --- !u!114 &8953725259266848697
 MonoBehaviour:
   m_ObjectHideFlags: 0
