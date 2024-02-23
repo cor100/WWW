@@ -38,26 +38,4 @@ public class CharacterJump : MonoBehaviour
         characterRB2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
     }
 
-
-    //public void delegate onGroundedStateUpdate(bool isGrounded);
-    //public static onGroundedStateUpdate EOnGroundedStateUpdate;
-    //public bool isInTheAir;
-
-    //// Start is called before the first frame update
-    //void Start()
-    //{
-    //    //isInTheAir = Owlet_Monster.Animator.isIntheAir;
-    //}
-
-    //// Update is called once per frame
-    //void Update()
-    //{
-    //    CheckForGrounded();
-    //}
-
-    //private static bool CheckForGrounded()
-    //{
-    //    EOnGroundedStateUpdate;
-    //    return false;
-    //}
 }
