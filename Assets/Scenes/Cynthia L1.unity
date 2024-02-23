@@ -4667,13 +4667,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 589025745454783539, guid: 7b2ab7a9927734b508c0ecec62134d88, type: 3}
-      propertyPath: airMovementSpeed
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 589025745454783539, guid: 7b2ab7a9927734b508c0ecec62134d88, type: 3}
-      propertyPath: groundMovementSpeed
-      value: 2
+    - target: {fileID: 2795614650049574626, guid: 7b2ab7a9927734b508c0ecec62134d88, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3293851599020913698, guid: 7b2ab7a9927734b508c0ecec62134d88, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4714,14 +4710,6 @@ PrefabInstance:
     - target: {fileID: 3293851599020913698, guid: 7b2ab7a9927734b508c0ecec62134d88, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4053121920718884770, guid: 7b2ab7a9927734b508c0ecec62134d88, type: 3}
-      propertyPath: jumpForce
-      value: 3.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7566891423396987503, guid: 7b2ab7a9927734b508c0ecec62134d88, type: 3}
-      propertyPath: distanceForGroundedCheck
-      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 8407511809150685185, guid: 7b2ab7a9927734b508c0ecec62134d88, type: 3}
       propertyPath: m_Name
@@ -4910,8 +4898,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1361890024}
   - component: {fileID: 1361890023}
-  - component: {fileID: 1361890022}
   - component: {fileID: 1361890025}
+  - component: {fileID: 1361890026}
   m_Layer: 0
   m_Name: Barrier
   m_TagString: barrier
@@ -4919,18 +4907,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1361890022
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1361890021}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e07683f55030b463e88ae5491cd3643c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1361890023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4961,7 +4937,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.2979, y: 2.9478}
+  m_AnchoredPosition: {x: 0.35, y: 2.27}
   m_SizeDelta: {x: 10.9122, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!61 &1361890025
@@ -4993,7 +4969,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.11233759, y: 0}
@@ -5009,6 +4985,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 11.944959, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1361890026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1361890021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e07683f55030b463e88ae5491cd3643c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1370926058
 GameObject:
   m_ObjectHideFlags: 0
