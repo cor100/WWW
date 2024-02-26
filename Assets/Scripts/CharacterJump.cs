@@ -8,11 +8,13 @@ public class CharacterJump : MonoBehaviour
     private Rigidbody2D characterRB2D;
     private bool isJumpBuffer;
     private CharGroundChecker groundChecker;
+    private CharGravityChecker gravChecker;
 
     private void Start()
     {
         characterRB2D = GetComponent<Rigidbody2D>();
         groundChecker = GetComponent<CharGroundChecker>();
+        gravChecker = GetComponent<CharGravityChecker>();
     }
 
     private void Update()
@@ -35,7 +37,14 @@ public class CharacterJump : MonoBehaviour
     private void Jump()
     {
         // impulse applies force in a frame, whereas force applies only when the key is pressed
-        characterRB2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        if (gravChecker.returnGravityDown())
+        {
+            characterRB2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        }
+        else
+        {
+            characterRB2D.AddForce(Vector2.down * jumpForce, ForceMode2D.Impulse);
+        }
     }
 
 }
