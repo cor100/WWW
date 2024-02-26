@@ -17,7 +17,6 @@ public class Spikes : Barrier{
             collision.gameObject.GetComponent<CharacterAnimator>().onPlayerIsMovingChanges(false);
             collision.gameObject.GetComponent<CharacterAnimator>().onPlayerGroundedChange(false);
             collision.gameObject.GetComponent<CharacterAnimator>().onPlayerDied(true);
-            Destroy(collision.gameObject, deathAnimationTime);
             Invoke("ReloadScene", deathAnimationTime);
         }
     }
