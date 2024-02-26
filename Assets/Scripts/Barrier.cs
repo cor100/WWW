@@ -5,13 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class Barrier : MonoBehaviour
 {
+    private float restartTime = 1;
     // Start is called before the first frame update
     private void OnTriggerEnter2D(Collider2D collision){
         if(collision.gameObject.CompareTag("player")){
-            Invoke("ReloadScene", 1);
+            Invoke("ReloadScene", restartTime);
         }
     }
-    void ReloadScene(){
+    public void ReloadScene(){
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
