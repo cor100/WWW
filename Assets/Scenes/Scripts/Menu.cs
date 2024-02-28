@@ -29,7 +29,7 @@ public class Menu : MonoBehaviour
         currentChar = characters[0];
     }
 
-    public void menuSetActive(){
-        gameObject.SetActive(!gameObject.activeSelf);
-    } 
+    
+
+    
 }
