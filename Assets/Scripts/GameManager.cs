@@ -4,17 +4,15 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    private static bool isLoadedUI = false;
     // Start is called before the first frame update
     void Start()
     {
-        GameObject player = GameObject.FindWithTag("player");
+        GameObject menu = GameObject.Find("MenuObject");
         // Make the GameObject persist across scene changes
-        if(player){
-            player.GetComponent<CharacterJump>().enabled = false;
-            player.GetComponent<CharHorizontalMovement>().enabled = false;
-            player.gameObject.GetComponent<CharacterAnimator>().onPlayerDied(false);
-
-            DontDestroyOnLoad(player);
+        if(menu && isLoadedUI){
+            DontDestroyOnLoad(menu);
+            isLoadedUI = true;
         }
     }
 }

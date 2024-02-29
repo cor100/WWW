@@ -1,19 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GravitySign : MonoBehaviour
 {
-    private SpriteRenderer spriteRenderer;
-    [SerializeField] private Sprite upSign;
-    [SerializeField] private Sprite downSign;
+    private Image imageRenderer;
+    [SerializeField] private Image upSign;
+    [SerializeField] private Image downSign;
     //private CharGravityChecker gravityChecker;
+    
 
     // Start is called before the first frame update
     void Start()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        spriteRenderer.sprite = downSign;
+        imageRenderer = GetComponent<Image>();
+        imageRenderer = downSign;
         
     }
 
@@ -27,11 +29,11 @@ public class GravitySign : MonoBehaviour
     {
         if(CharGravityChecker.Get().returnGravityDown())
         {
-            spriteRenderer.sprite = downSign;
+            imageRenderer = downSign;
         }
         else
         {
-            spriteRenderer.sprite = upSign;
+            imageRenderer = upSign;
         }
     }
 

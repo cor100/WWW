@@ -302,7 +302,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 697d405b3fe234e568612ded29f52787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceForGroundedCheck: 0.5
+  distanceForGroundedCheck: 0.2
   groundMask:
     serializedVersion: 2
     m_Bits: 64
