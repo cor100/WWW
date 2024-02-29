@@ -9,12 +9,9 @@ public class CharacterJump : MonoBehaviour
     private bool isJumpBuffer;
     private CharGroundChecker groundChecker;
     private CharGravityChecker gravChecker;
-<<<<<<< HEAD
     [SerializeField] private AudioSource jumpSoundEffect;
-=======
     private float coyoteTime = 0.5f;
     private float coyoteTimeCounter; 
->>>>>>> 40569de9ae98d49ace4e5338a4897ede501a1175
 
     private void Start()
     {
