@@ -13,6 +13,16 @@ public class TutorialManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        try
+        {
+            if (CharHorizontalMovement.Get().returnHasMovedAlready())
+            {
+                Destroy(gameObject);
+            }
+        }
+        catch
+        {
+
+        }
     }
 }
