@@ -9,8 +9,12 @@ public class CharacterJump : MonoBehaviour
     private bool isJumpBuffer;
     private CharGroundChecker groundChecker;
     private CharGravityChecker gravChecker;
+<<<<<<< HEAD
+    [SerializeField] private AudioSource jumpSoundEffect;
+=======
     private float coyoteTime = 0.5f;
     private float coyoteTimeCounter; 
+>>>>>>> 40569de9ae98d49ace4e5338a4897ede501a1175
 
     private void Start()
     {
@@ -45,6 +49,7 @@ public class CharacterJump : MonoBehaviour
 
     private void Jump()
     {
+        jumpSoundEffect.Play();
         // impulse applies force in a frame, whereas force applies only when the key is pressed
         if (gravChecker.returnGravityDown())
         {
@@ -54,6 +59,7 @@ public class CharacterJump : MonoBehaviour
         {
             characterRB2D.AddForce(Vector2.down * jumpForce, ForceMode2D.Impulse);
         }
+
     }
 
 }
