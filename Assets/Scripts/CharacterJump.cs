@@ -9,6 +9,7 @@ public class CharacterJump : MonoBehaviour
     private bool isJumpBuffer;
     private CharGroundChecker groundChecker;
     private CharGravityChecker gravChecker;
+    [SerializeField] private AudioSource jumpSoundEffect;
 
     private void Start()
     {
@@ -37,6 +38,7 @@ public class CharacterJump : MonoBehaviour
     private void Jump()
     {
         // impulse applies force in a frame, whereas force applies only when the key is pressed
+        jumpSoundEffect.Play();
         if (gravChecker.returnGravityDown())
         {
             characterRB2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
