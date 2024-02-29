@@ -8,6 +8,7 @@ public class CharGravitySwitch : MonoBehaviour
     private bool isGravityBuffer;
     private CharGroundChecker groundChecker;
     private CharacterAnimator characterAnimator;
+    [SerializeField] public AudioSource gravitySoundEffect;
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +34,7 @@ public class CharGravitySwitch : MonoBehaviour
 
     private void SwitchGravity()
     {
+        gravitySoundEffect.Play();
         characterRB2D.gravityScale *= -1;
         // 180 flip such that the character inverts
         transform.Rotate(0, 0, 180);
