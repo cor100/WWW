@@ -1893,10 +1893,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35d10e1c52fb84b7f98798d2b6e5de24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xMin: -500
+  xMin: -6.5
   xMax: 500
   yMin: -2
-  yMax: -0.5
+  yMax: -0.65
 --- !u!81 &1540509662
 AudioListener:
   m_ObjectHideFlags: 0
