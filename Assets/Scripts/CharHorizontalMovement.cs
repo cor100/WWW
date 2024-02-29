@@ -17,6 +17,10 @@ public class CharHorizontalMovement : MonoBehaviour
 
     private CharGravityChecker charGravityChecker;
 
+    private bool hasMovedAlready;
+    private static CharHorizontalMovement _instance;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +29,8 @@ public class CharHorizontalMovement : MonoBehaviour
         characterSpriteRenderer = GetComponent<SpriteRenderer>();
         groundChecker = GetComponent<CharGroundChecker>();
         charGravityChecker = GetComponent<CharGravityChecker>();
+        hasMovedAlready = false;
+        _instance = this;
     }
 
     // Update is called once per frame
@@ -66,6 +72,12 @@ public class CharHorizontalMovement : MonoBehaviour
 
     private void MoveHorizontally()
     {
+        if (hasMovedAlready == false)
+        {
+            hasMovedAlready = true;
+        }
+        
+
         if (Input.GetKey(KeyCode.RightArrow))
         {
             if (charGravityChecker.returnGravityDown())
@@ -113,6 +125,16 @@ public class CharHorizontalMovement : MonoBehaviour
     public bool returnWalkingState()
     {
         return isWalking;
+    }
+
+    public static CharHorizontalMovement Get()
+    {
+        return _instance;
+    }
+
+    public bool returnHasMovedAlready()
+    {
+        return hasMovedAlready;
     }
 
 }
