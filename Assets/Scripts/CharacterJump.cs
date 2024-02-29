@@ -37,8 +37,8 @@ public class CharacterJump : MonoBehaviour
 
     private void Jump()
     {
-        // impulse applies force in a frame, whereas force applies only when the key is pressed
         jumpSoundEffect.Play();
+        // impulse applies force in a frame, whereas force applies only when the key is pressed
         if (gravChecker.returnGravityDown())
         {
             characterRB2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
@@ -47,6 +47,7 @@ public class CharacterJump : MonoBehaviour
         {
             characterRB2D.AddForce(Vector2.down * jumpForce, ForceMode2D.Impulse);
         }
+
     }
 
 }
