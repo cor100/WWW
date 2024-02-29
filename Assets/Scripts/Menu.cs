@@ -4,32 +4,19 @@ using Unity.VisualScripting;
 
 public class Menu : MonoBehaviour
 {
-    [SerializeField] private SpriteRenderer gravityIconRenderer;
-    [SerializeField] private SpriteRenderer characterRenderer;
-    //public GameObject purpleMonst;
-    //public GameObject blueMonst;
-    // public GameObject owlMonst;
-    // public GameObject startChar;
-
-    // private Vector2 currentLocation;
-    // public static GameObject currentChar;
-
+    [SerializeField] private GameObject gravityIcon;
+    
     void Start(){
-        gravityIconRenderer = gameObject.GetComponent<SpriteRenderer>();
-        // if(!currentChar){
-        //     currentChar = owlMonst;
-        // }
     }
 
     void Update(){
-        // currentLocation = currentChar.transform.position;
     }
     public void restart(){
         int sceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(sceneIndex);
     }
     public void toggleGravityIcon(){
-        gravityIconRenderer.enabled = !gravityIconRenderer.enabled;
+        gravityIcon.SetActive(!gravityIcon.activeSelf);
     }
     // public void purple(){
     //     blueMonst.SetActive(false);
