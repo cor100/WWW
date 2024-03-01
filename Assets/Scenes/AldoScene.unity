@@ -3462,11 +3462,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3293851599020913698, guid: 7b2ab7a9927734b508c0ecec62134d88, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.8
+      value: -2.558
       objectReference: {fileID: 0}
     - target: {fileID: 3293851599020913698, guid: 7b2ab7a9927734b508c0ecec62134d88, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.426
+      value: -1.414
       objectReference: {fileID: 0}
     - target: {fileID: 3293851599020913698, guid: 7b2ab7a9927734b508c0ecec62134d88, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3503,10 +3503,6 @@ PrefabInstance:
     - target: {fileID: 8407511809150685185, guid: 7b2ab7a9927734b508c0ecec62134d88, type: 3}
       propertyPath: m_Name
       value: Owlet_Monster
-      objectReference: {fileID: 0}
-    - target: {fileID: 8742091281343339370, guid: 7b2ab7a9927734b508c0ecec62134d88, type: 3}
-      propertyPath: jumpForce
-      value: 3.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
