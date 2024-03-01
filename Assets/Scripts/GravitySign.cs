@@ -5,18 +5,16 @@ using UnityEngine.UI;
 
 public class GravitySign : MonoBehaviour
 {
-    private Image imageRenderer;
-    [SerializeField] private Image upSign;
-    [SerializeField] private Image downSign;
+    private RectTransform rectTransform;
+    //[SerializeField] private Image upSign;
+    //[SerializeField] private Image downSign;
     //private CharGravityChecker gravityChecker;
     
 
     // Start is called before the first frame update
     void Start()
     {
-        imageRenderer = GetComponent<Image>();
-        imageRenderer = downSign;
-        
+        rectTransform = GetComponent<RectTransform>();        
     }
 
     // Update is called once per frame
@@ -29,11 +27,11 @@ public class GravitySign : MonoBehaviour
     {
         if(CharGravityChecker.Get().returnGravityDown())
         {
-            imageRenderer = downSign;
+            rectTransform.eulerAngles = new Vector3(0, 0, 180);
         }
         else
         {
-            imageRenderer = upSign;
+            rectTransform.eulerAngles = new Vector3(0, 0, 0);
         }
     }
 

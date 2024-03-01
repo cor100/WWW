@@ -17,7 +17,7 @@ public class TutorialManager : MonoBehaviour
         {
             if (CharHorizontalMovement.Get().returnHasMovedAlready())
             {
-                Destroy(gameObject);
+                gameObject.SetActive(false);
             }
         }
         catch
