@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/VictoryScene.unity
     guid: fe7c86401decb465aae94d8121e760bb
+  - enabled: 1
+    path: Assets/Scenes/Hannah L1.unity
+    guid: ea302386350024f978d8d320f7fbae15
   m_configObjects: {}

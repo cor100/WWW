@@ -133,18 +133,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 3345573883055336950}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &1799133633281430939
 GameObject:
   m_ObjectHideFlags: 0
@@ -795,8 +783,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 558322613013138361}
-  - {fileID: 8778927879747368140}
   - {fileID: 7423845770730164486}
+  - {fileID: 8778927879747368140}
   - {fileID: 5404958050217024966}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -812,9 +800,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: TutorialCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 3376947047787670204, guid: 74b1c28a6dd424355bb405c96b25c916, type: 3}
+      propertyPath: m_Color.g
+      value: 0.8625617
+      objectReference: {fileID: 0}
+    - target: {fileID: 3376947047787670204, guid: 74b1c28a6dd424355bb405c96b25c916, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3805031779935247267, guid: 74b1c28a6dd424355bb405c96b25c916, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4247624657034074325, guid: 74b1c28a6dd424355bb405c96b25c916, type: 3}
+      propertyPath: firstSceneName
+      value: AldoScene
       objectReference: {fileID: 0}
     - target: {fileID: 8882922346457925598, guid: 74b1c28a6dd424355bb405c96b25c916, type: 3}
       propertyPath: m_Pivot.x
@@ -902,13 +902,29 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5181051442047420162, guid: 74b1c28a6dd424355bb405c96b25c916, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8068523284344954151}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3805031779935247267, guid: 74b1c28a6dd424355bb405c96b25c916, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1060554578349310635}
   m_SourcePrefab: {fileID: 100100000, guid: 74b1c28a6dd424355bb405c96b25c916, type: 3}
 --- !u!1 &2922421179123076475 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3805031779935247267, guid: 74b1c28a6dd424355bb405c96b25c916, type: 3}
   m_PrefabInstance: {fileID: 2035827874369984216}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1060554578349310635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2922421179123076475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92850fc6c7f7942adab7b583f5381fce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tutorialDestroyTime: 0.5
 --- !u!224 &6604102777044619738 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5181051442047420162, guid: 74b1c28a6dd424355bb405c96b25c916, type: 3}
@@ -1275,6 +1291,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gravityIcon: {fileID: 8799444346849657387}
+  tutorial: {fileID: 2948948208680088382, guid: 74b1c28a6dd424355bb405c96b25c916, type: 3}
 --- !u!224 &4199014927941604516 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5640940139339901224, guid: e2cd88fbb081d40f1ba72a1b8e568ff8, type: 3}
