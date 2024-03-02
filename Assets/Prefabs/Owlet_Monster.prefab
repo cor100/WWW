@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 5269768833294092471}
   - component: {fileID: 2795614650049574626}
   - component: {fileID: 4400555397353072165}
-  - component: {fileID: 7566891423396987503}
   - component: {fileID: 7335551033993657952}
   - component: {fileID: 589025745454783539}
   - component: {fileID: 8953725259266848697}
@@ -212,22 +211,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &7566891423396987503
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8407511809150685185}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 697d405b3fe234e568612ded29f52787, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  distanceForGroundedCheck: 0.3
-  groundMask:
-    serializedVersion: 2
-    m_Bits: 64
 --- !u!114 &7335551033993657952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -304,7 +287,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 697d405b3fe234e568612ded29f52787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceForGroundedCheck: 0.2
+  distanceForGroundedCheck: 0.3
   groundMask:
     serializedVersion: 2
     m_Bits: 64

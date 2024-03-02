@@ -17,7 +17,7 @@ public class CharHorizontalMovement : MonoBehaviour
 
     private CharGravityChecker charGravityChecker;
 
-    private bool hasMovedAlready;
+    public static bool hasMovedAlready;
     private static CharHorizontalMovement _instance;
 
 

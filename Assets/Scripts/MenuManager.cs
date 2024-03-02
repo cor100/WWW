@@ -11,9 +11,11 @@ public class MenuManager : MonoBehaviour
     {
         menuSetActive();
     }
-    public void menuSetActive(){
-        if(Input.GetKeyDown(KeyCode.Escape)){
-            Debug.Log("esc");
+
+    public void menuSetActive()
+    {
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
             menu.SetActive(!menu.activeSelf);
         } 
     }

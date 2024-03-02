@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class LevelChange : MonoBehaviour
 {
 
-    public int sceneIndex;
+    [SerializeField] private string nextSceneName;
 
     // Will be an onTrigger collision
     private void OnTriggerEnter2D(Collider2D doorCollision)
@@ -14,7 +14,7 @@ public class LevelChange : MonoBehaviour
         // If the door is activated by the player going in, switch scenes.
         if (doorCollision.CompareTag("player"))
         {
-            SceneManager.LoadScene(sceneIndex, LoadSceneMode.Single);
+            SceneManager.LoadScene(nextSceneName, LoadSceneMode.Single);
         }
 
     }

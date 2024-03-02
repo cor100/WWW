@@ -29,11 +29,11 @@ public class Timer : MonoBehaviour
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             
             }
-        }
-        
-        
+        } 
     }
-    private void DisplayTime(float time){
+
+    private void DisplayTime(float time)
+    {
         float mins = Mathf.FloorToInt(time / 60);
         float seconds = Mathf.FloorToInt(time % 60);
         timerText.text = string.Format("{0:00}:{1:00}", mins, seconds);
