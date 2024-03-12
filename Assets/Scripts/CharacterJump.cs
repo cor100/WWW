@@ -10,9 +10,10 @@ public class CharacterJump : MonoBehaviour
     private CharGroundChecker groundChecker;
     private CharGravityChecker gravChecker;
     [SerializeField] private AudioSource jumpSoundEffect;
+    [SerializeField] private int numJumps = 1;
     private float coyoteTime = 0.5f;
-    private float coyoteTimeCounter;
-
+    private float coyoteTimeCounter;    
+    private int numJumpsLeft;
     private void Start()
     {
         characterRB2D = GetComponent<Rigidbody2D>();
@@ -21,21 +22,51 @@ public class CharacterJump : MonoBehaviour
     }
 
     private void Update()
-    {
-        if(groundChecker.returnGroundedState())
-        {
+    {   
+        if(groundChecker.returnGroundedState()){
             coyoteTimeCounter = coyoteTime;
-        }
-        else
-        {
+            numJumpsLeft = numJumps;
+            if(Input.GetKeyDown(KeyCode.Space)){
+                isJumpBuffer = true;
+                numJumpsLeft -= 1;
+            }
+        }else{
             coyoteTimeCounter -= Time.deltaTime;
+            if(Input.GetKeyDown(KeyCode.Space) && coyoteTimeCounter > 0f){
+                if(numJumpsLeft > 0){
+                    isJumpBuffer = true;
+                }
+            }
         }
 
-        if (coyoteTimeCounter > 0f && Input.GetKeyDown(KeyCode.Space))
-        {
-            isJumpBuffer = true;
-        }
+        // if(Input.GetKeyDown(KeyCode.Space)){
+        //     if(numJumpsLeft > 0){
+        //         Debug.Log("true if "+numJumpsLeft);
+        //         if(coyoteTimeCounter > 0f){
+        //             isJumpBuffer = true;
+        //             numJumpsLeft -= 1;
+        //             Debug.Log(isJumpBuffer);
+        //         }
+        //     }else{
+        //         Debug.Log("numJmpsLeft "+numJumpsLeft);
+        //         Debug.Log(coyoteTimeCounter);
+        //     }
+        // }
+
+        // if(groundChecker.returnGroundedState())
+        // {
+        //     coyoteTimeCounter = coyoteTime;
+        //     numJumpsLeft = numJumps;
+        // }
+        // else
+        // {
+        //     coyoteTimeCounter -= Time.deltaTime;
+        // }
+
+
+
     }
+
 
     private void FixedUpdate()
     {
