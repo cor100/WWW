@@ -236,6 +236,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5303809564749852352, guid: 7b2ab7a9927734b508c0ecec62134d88, type: 3}
+      propertyPath: distanceForGroundedCheck
+      value: 0.23
+      objectReference: {fileID: 0}
     - target: {fileID: 8407511809150685185, guid: 7b2ab7a9927734b508c0ecec62134d88, type: 3}
       propertyPath: m_Name
       value: Owlet_Monster
