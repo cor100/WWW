@@ -813,11 +813,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wayPoints:
-  - {x: 4, y: 0}
-  - {x: -4, y: 0}
-  moveSpeed: 0
-  arrivalThreshold: 0
-  waitingSecondsPerPosition: 0
+  - {x: 2.79, y: 1.467, z: 0}
+  - {x: 1.08, y: 1.467, z: 0}
+  arrivalThreshold: 0.001
+  waitingSecondsPerPosition: 1
+  moveDistancePerFrame: 0.01
 --- !u!1 &1576330090
 GameObject:
   m_ObjectHideFlags: 0
@@ -874,6 +874,10 @@ PrefabInstance:
     - target: {fileID: 496653354905507567, guid: a0dd7cb12c4cc45ae8552b364186e9ce, type: 3}
       propertyPath: m_Name
       value: Enemy1
+      objectReference: {fileID: 0}
+    - target: {fileID: 496653354905507567, guid: a0dd7cb12c4cc45ae8552b364186e9ce, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 5936274179703723413, guid: a0dd7cb12c4cc45ae8552b364186e9ce, type: 3}
       propertyPath: m_LocalPosition.x
