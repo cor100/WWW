@@ -21,10 +21,6 @@ public class EnemyMovement : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
-        //for(int i = 0; i < (wayPointsIndex - 1); i++)
-        //{
-
-        //}
         Gizmos.DrawSphere(wayPoints[0], (float) 0.1);
         Gizmos.DrawSphere(wayPoints[1], (float) 0.1);
     }
@@ -60,7 +56,7 @@ public class EnemyMovement : MonoBehaviour
                 float withinArrivalThreshold = (transform.position - nextTargetPosition).magnitude;
                 if (withinArrivalThreshold > arrivalThreshold)
                 {
-                    transform.position = Vector3.MoveTowards(transform.position, nextTargetPosition, moveDistancePerFrame);
+                    transform.position = Vector3.MoveTowards(transform.position, nextTargetPosition, moveDistancePerFrame * Time.deltaTime);
                 }
                 else
                 {
