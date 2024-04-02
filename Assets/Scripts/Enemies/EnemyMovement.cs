@@ -30,12 +30,12 @@ public class EnemyMovement : MonoBehaviour
     {
         wayPointsLength = wayPoints.Count - 1;
         GetNextTargetPosition();
+        StartCoroutine(IMovingCoroutine());
     }
 
     // Update is called once per frame
     void Update()
     {
-        StartCoroutine(IMovingCoroutine());
         if (arrivedAtNextPos)
         {
             Debug.Log("arrived from update");
@@ -49,7 +49,7 @@ public class EnemyMovement : MonoBehaviour
         // use vector3.movetowards()
     private IEnumerator IMovingCoroutine()
     {
-        if (isAlive)
+        while (isAlive)
         {
             if (!arrivedAtNextPos)
             {
@@ -70,6 +70,7 @@ public class EnemyMovement : MonoBehaviour
                 GetNextTargetPosition();
                 arrivedAtNextPos = false;
             }
+            yield return null;
         }
     }
 

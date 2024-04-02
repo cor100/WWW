@@ -332,9 +332,37 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1037480979008040463, guid: ccbef0fb80721460c86e0149c4467f99, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -4
+      objectReference: {fileID: 0}
     - target: {fileID: 1302412907154893395, guid: ccbef0fb80721460c86e0149c4467f99, type: 3}
       propertyPath: m_hasFontAssetChanged
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2192399447074224177, guid: ccbef0fb80721460c86e0149c4467f99, type: 3}
+      propertyPath: m_SortingLayer
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2192399447074224177, guid: ccbef0fb80721460c86e0149c4467f99, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2192399447074224177, guid: ccbef0fb80721460c86e0149c4467f99, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1596002159
+      objectReference: {fileID: 0}
+    - target: {fileID: 2762958199410277134, guid: ccbef0fb80721460c86e0149c4467f99, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 2050763030}
+    - target: {fileID: 2762958199410277134, guid: ccbef0fb80721460c86e0149c4467f99, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3053464444126340369, guid: ccbef0fb80721460c86e0149c4467f99, type: 3}
+      propertyPath: m_Value
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3193821272948356685, guid: ccbef0fb80721460c86e0149c4467f99, type: 3}
       propertyPath: m_Name
