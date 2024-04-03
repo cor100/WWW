@@ -40,39 +40,41 @@ public class ParticleController : MonoBehaviour
             counter = 0;
         }
 
-        //if (!groundChecker.returnGroundedState())
-        //{
-        //    fallParticle.Play();
-        //}
 
-        //if (!groundChecker.returnGroundedState())
-        //{
-        //    if (!isFallParticlePlaying) // Start fallParticle if not already started.
-        //    {
-        //        fallParticle.Play();
-        //        isFallParticlePlaying = true;
-        //        fallParticleTimer = 0; // Reset timer.
-        //    }
-        //}
-        //else
-        //{
-        //    if (isFallParticlePlaying)
-        //    {
-        //        fallParticle.Stop(); // Stop fallParticle if player is grounded.
-        //        isFallParticlePlaying = false;
-        //    }
-        //}
+        // Timer to stop fallParticle after 1 second.
+        if (isFallParticlePlaying)
+        {
+            fallParticleTimer += Time.deltaTime;
 
-        //// Timer to stop fallParticle after 1 second.
-        //if (isFallParticlePlaying)
-        //{
-        //    fallParticleTimer += Time.deltaTime;
-        //    if (fallParticleTimer >= 0.1f) // Check if 1 second has passed.
-        //    {
-        //        fallParticle.Stop();
-        //        isFallParticlePlaying = false;
-        //    }
-        //}
- 
+            // Stop fallParticle after 1 second has passed.
+            if (fallParticleTimer >= 1.0f) // Corrected to check for 1 second
+            {
+                fallParticle.Stop();
+                isFallParticlePlaying = false;
+            }
+        }
+
+        // Check if the character is not grounded to possibly play the fallParticle.
+        if (groundChecker.returnGroundedState())
+        {
+            if (!isFallParticlePlaying) 
+            {
+                fallParticle.Play();
+                isFallParticlePlaying = true;
+                fallParticleTimer = 0; // Reset the timer to count 1 second from now.
+            }
+        }
+        else // If the character is grounded...
+        {
+            if (isFallParticlePlaying) // And if fallParticle was playing, stop it.
+            {
+                fallParticle.Stop();
+                isFallParticlePlaying = false;
+            }
+        }
+
+   
+      
+
     }
 }
