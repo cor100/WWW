@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3208637305371273635}
   - component: {fileID: 8788076337374529961}
   - component: {fileID: 4871604274281951143}
+  - component: {fileID: 2234496822129015314}
   m_Layer: 0
   m_Name: Enemy1
   m_TagString: Enemy
@@ -152,6 +153,7 @@ MonoBehaviour:
   arrivalThreshold: 0.001
   waitingSecondsPerPosition: 1
   moveDistancePerFrame: 0.7
+  startByMovingRight: 0
 --- !u!50 &3208637305371273635
 Rigidbody2D:
   serializedVersion: 4
@@ -204,3 +206,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e07683f55030b463e88ae5491cd3643c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &2234496822129015314
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 496653354905507567}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ddb1026034b8d472f83a543f6de78bff, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

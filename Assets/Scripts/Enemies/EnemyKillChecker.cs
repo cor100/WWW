@@ -5,24 +5,40 @@ using UnityEngine;
 public class EnemyKillChecker : MonoBehaviour
 {
 
-    public CharacterAnimator characterAnimator;
+    public EnemyAnimation enemyAnimator;
+    [SerializeField] private float jumpDeathBuffer;
+
     private float deathAnimationTime = 1;
-    private bool isDead = false;
+    private bool isKill = false;
     private Barrier barrier;
+    private Collider2D enemyCollider;
 
     void Start()
     {
         barrier = GetComponent<Barrier>();
+        enemyAnimator = GetComponent<EnemyAnimation>();
+        enemyCollider = GetComponent<Collider2D>();
     }
 
+
+    //collider.bound.max.y
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("player"))
+        float playerEnemyCollisionY = collision.GetContact(0).point.y;
+        float enemyDeathLimitY = enemyCollider.bounds.max.y - jumpDeathBuffer;
+
+        if (playerEnemyCollisionY > enemyDeathLimitY)
         {
-            isDead = true;
+            Debug.Log("enemy died");
+            enemyAnimator.enemyDied(true);
+            //Destroy(gameObject);
+        }
+        else if ((playerEnemyCollisionY <= enemyDeathLimitY) && collision.gameObject.CompareTag("player"))
+        {
+            isKill = true;
         }
 
-        if (isDead)
+        if (isKill)
         {
             collision.gameObject.GetComponent<CharacterJump>().enabled = false;
             collision.gameObject.GetComponent<CharHorizontalMovement>().enabled = false;

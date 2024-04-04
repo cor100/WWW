@@ -20,6 +20,5 @@ public class CharacterAnimator : MonoBehaviour
 
     public void onPlayerDied(bool isDead){
         characterAnimator.SetBool("isDead", isDead);
-
     }
 }
