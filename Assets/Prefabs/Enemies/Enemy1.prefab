@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 1147784485157716372}
   - component: {fileID: 8369700203262209638}
   - component: {fileID: 3611510704260056517}
-  - component: {fileID: 3208637305371273635}
   - component: {fileID: 8788076337374529961}
   - component: {fileID: 4871604274281951143}
   - component: {fileID: 2234496822129015314}
+  - component: {fileID: 3374757155360181524}
   m_Layer: 0
   m_Name: Enemy1
   m_TagString: Enemy
@@ -154,33 +154,6 @@ MonoBehaviour:
   waitingSecondsPerPosition: 1
   moveDistancePerFrame: 0.7
   startByMovingRight: 0
---- !u!50 &3208637305371273635
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 496653354905507567}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!114 &8788076337374529961
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -193,7 +166,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b9891d5d64fe497ab391a09b828ccca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterAnimator: {fileID: 0}
+  enemyAnimator: {fileID: 0}
+  jumpDeathBuffer: 0.1
+  playerForceBounceFromAttack: 1.5
 --- !u!114 &4871604274281951143
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -227,3 +202,16 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3374757155360181524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 496653354905507567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc1c63b4a166e4240ae337620cf7d802, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyAnimator: {fileID: 2234496822129015314}
