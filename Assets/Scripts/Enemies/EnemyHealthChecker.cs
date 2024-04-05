@@ -7,6 +7,7 @@ public class EnemyHealthChecker : MonoBehaviour
 
     [SerializeField] private int enemyStartHealth;
     private int enemyHealth;
+    private bool isDead;
 
 
     // Start is called before the first frame update
@@ -28,6 +29,9 @@ public class EnemyHealthChecker : MonoBehaviour
 
     protected void EnemyDamaged()
     {
-        enemyHealth -= 1;
+        if (!isDead)
+        {
+            enemyHealth -= 1;
+        }
     }
 }
