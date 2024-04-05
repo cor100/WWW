@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class EnemyKillChecker : MonoBehaviour
 {
-
-    public EnemyAnimation enemyAnimator;
     [SerializeField] private float jumpDeathBuffer;
     [SerializeField] private float playerForceBounceFromAttack;
 
@@ -13,6 +11,7 @@ public class EnemyKillChecker : MonoBehaviour
     private bool isKill = false;
     private Barrier barrier;
     private Collider2D enemyCollider;
+    private EnemyAnimation enemyAnimator;
 
     private float playerEnemyCollisionY;
     private float enemyDeathLimitY;
@@ -45,7 +44,7 @@ public class EnemyKillChecker : MonoBehaviour
         {
             PlayerBounceFromAttack();
             enemyAnimator.enemyDied(true);
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(deathAnimationTime);
             Destroy(gameObject);
         }
 
