@@ -5,35 +5,79 @@ using UnityEngine;
 public class EnemyKillChecker : MonoBehaviour
 {
 
-    public CharacterAnimator characterAnimator;
+    public EnemyAnimation enemyAnimator;
+    [SerializeField] private float jumpDeathBuffer;
+    [SerializeField] private float playerForceBounceFromAttack;
+
     private float deathAnimationTime = 1;
-    private bool isDead = false;
+    private bool isKill = false;
     private Barrier barrier;
+    private Collider2D enemyCollider;
+
+    private float playerEnemyCollisionY;
+    private float enemyDeathLimitY;
+    private GameObject collidedObject;
 
     void Start()
     {
         barrier = GetComponent<Barrier>();
+        enemyAnimator = GetComponent<EnemyAnimation>();
+        enemyCollider = GetComponent<Collider2D>();
     }
+
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("player"))
+        playerEnemyCollisionY = collision.GetContact(0).point.y;
+        enemyDeathLimitY = enemyCollider.bounds.max.y - jumpDeathBuffer;
+        collidedObject = collision.gameObject;
+
+        print(playerEnemyCollisionY);
+        print(enemyDeathLimitY);
+
+        StartCoroutine(CheckDeathStatus());
+    }
+
+    private IEnumerator CheckDeathStatus()
+    {
+
+        if (playerEnemyCollisionY > enemyDeathLimitY)
         {
-            isDead = true;
+            PlayerBounceFromAttack();
+            enemyAnimator.enemyDied(true);
+            yield return new WaitForSeconds(1);
+            Destroy(gameObject);
         }
 
-        if (isDead)
+        else if ((playerEnemyCollisionY <= enemyDeathLimitY) && collidedObject.CompareTag("player"))
         {
-            collision.gameObject.GetComponent<CharacterJump>().enabled = false;
-            collision.gameObject.GetComponent<CharHorizontalMovement>().enabled = false;
-            collision.gameObject.GetComponent<CharacterAnimator>().onPlayerIsMovingChanges(false);
-            collision.gameObject.GetComponent<CharacterAnimator>().onPlayerGroundedChange(false);
-            collision.gameObject.GetComponent<CharacterAnimator>().onPlayerDied(true);
+            isKill = true;
+            KillPlayer();
+        }
+
+        yield return null;
+    }
+
+    private void PlayerBounceFromAttack()
+    {
+        Rigidbody2D playerRB2D = collidedObject.GetComponent<Rigidbody2D>();
+        playerRB2D.AddForce(collidedObject.transform.up * playerForceBounceFromAttack, ForceMode2D.Impulse);
+    }
+
+    private void KillPlayer()
+    {
+        if (isKill)
+        {
+            collidedObject.GetComponent<CharacterJump>().enabled = false;
+            collidedObject.GetComponent<CharHorizontalMovement>().enabled = false;
+            collidedObject.GetComponent<CharacterAnimator>().onPlayerIsMovingChanges(false);
+            collidedObject.GetComponent<CharacterAnimator>().onPlayerGroundedChange(false);
+            collidedObject.GetComponent<CharacterAnimator>().onPlayerDied(true);
             Invoke("CallReloadScene", deathAnimationTime);
         }
     }
 
-    private void CallReloadScene()
+        private void CallReloadScene()
     {
         barrier.ReloadScene();
     }

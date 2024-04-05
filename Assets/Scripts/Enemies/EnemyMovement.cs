@@ -14,10 +14,13 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] private float arrivalThreshold;
     [SerializeField] private float waitingSecondsPerPosition;
     [SerializeField] private float moveDistancePerFrame;
+    [SerializeField] private bool startByMovingRight;
 
     private Vector3 nextTargetPosition;
     private bool arrivedAtNextPos = false;
     private bool isAlive = true;
+    //private bool isMovingRight;
+    private SpriteRenderer enemySpriteRenderer;
 
     private void OnDrawGizmosSelected()
     {
@@ -30,16 +33,15 @@ public class EnemyMovement : MonoBehaviour
     {
         wayPointsLength = wayPoints.Count - 1;
         GetNextTargetPosition();
+        StartCoroutine(IMovingCoroutine());
+        //isMovingRight = startByMovingRight;
+        enemySpriteRenderer = GetComponent<SpriteRenderer>();
+        enemySpriteRenderer.flipX = !startByMovingRight;
     }
 
     // Update is called once per frame
     void Update()
     {
-        StartCoroutine(IMovingCoroutine());
-        if (arrivedAtNextPos)
-        {
-            Debug.Log("arrived from update");
-        }
     }
 
     // method movingCoroutine
@@ -49,7 +51,7 @@ public class EnemyMovement : MonoBehaviour
         // use vector3.movetowards()
     private IEnumerator IMovingCoroutine()
     {
-        if (isAlive)
+        while (isAlive)
         {
             if (!arrivedAtNextPos)
             {
@@ -62,14 +64,15 @@ public class EnemyMovement : MonoBehaviour
                 {
                     yield return new WaitForSeconds(waitingSecondsPerPosition);
                     arrivedAtNextPos = true;
-                    Debug.Log("arrived from coroutine");
                 }
             }
             else
             {
                 GetNextTargetPosition();
                 arrivedAtNextPos = false;
+                enemySpriteRenderer.flipX = !enemySpriteRenderer.flipX;
             }
+            yield return null;
         }
     }
 
