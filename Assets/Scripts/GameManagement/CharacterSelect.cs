@@ -4,15 +4,13 @@ using System.Collections.Generic;
 using System.Reflection.Emit;
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class CharacterSelect : MonoBehaviour
 {
-    
-    [SerializeField] private string nextSceneName;
+    public int selectedCharacter = 0;
+
     [SerializeField] private GameObject[] chars;
     [SerializeField] private GameObject[] stats;
-    [SerializeField] private int selectedCharacter = 0;
     [SerializeField] TMP_Text charLabel;
     private string[] prefabNames = {"Owl", "Blue", "Pink"};
 
@@ -46,14 +44,6 @@ public class CharacterSelect : MonoBehaviour
         print(selectedCharacter);
 
 
-    }
-
-    // Start is called before the first frame update
-    public void StartButton()
-    {
-        PlayerPrefs.SetInt("selectedCharacter", selectedCharacter);
-        SceneManager.LoadScene(nextSceneName, LoadSceneMode.Single);
-
-    }
+    }    
 
 }
