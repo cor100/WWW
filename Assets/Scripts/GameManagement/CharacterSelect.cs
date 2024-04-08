@@ -14,7 +14,7 @@ public class CharacterSelect : MonoBehaviour
     [SerializeField] private GameObject[] stats;
     [SerializeField] private int selectedCharacter = 0;
     [SerializeField] TMP_Text charLabel;
-    private String[] prefabNames = {"Owl", "Blue", "Pink"};
+    private string[] prefabNames = {"Owl", "Blue", "Pink"};
 
 
 
@@ -27,7 +27,7 @@ public class CharacterSelect : MonoBehaviour
         stats[selectedCharacter].SetActive(true);
 
         charLabel.text = prefabNames[selectedCharacter];
-
+        print(selectedCharacter);
 
     }
     public void PrevCharacter(){
@@ -40,6 +40,8 @@ public class CharacterSelect : MonoBehaviour
         }
         chars[selectedCharacter].SetActive(true);
         stats[selectedCharacter].SetActive(true);
+
+        charLabel.text = prefabNames[selectedCharacter];
 
         print(selectedCharacter);
 

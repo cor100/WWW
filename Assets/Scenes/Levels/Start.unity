@@ -631,6 +631,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1796034018}
     - target: {fileID: 5432866668375938798, guid: ccbef0fb80721460c86e0149c4467f99, type: 3}
+      propertyPath: nextSceneName
+      value: AldoScene2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5432866668375938798, guid: ccbef0fb80721460c86e0149c4467f99, type: 3}
       propertyPath: chars.Array.size
       value: 3
       objectReference: {fileID: 0}
