@@ -9,6 +9,7 @@ public class EnemyKillChecker : MonoBehaviour
 
     private float deathAnimationTime = 1;
     private bool isKill = false;
+    private bool isDead = false;
     private Barrier barrier;
     private Collider2D enemyCollider;
     private EnemyAnimation enemyAnimator;
@@ -43,6 +44,7 @@ public class EnemyKillChecker : MonoBehaviour
         if (playerEnemyCollisionY > enemyDeathLimitY)
         {
             PlayerBounceFromAttack();
+            isDead = true;
             enemyAnimator.enemyDied(true);
             yield return new WaitForSeconds(deathAnimationTime);
             Destroy(gameObject);
@@ -50,8 +52,11 @@ public class EnemyKillChecker : MonoBehaviour
 
         else if ((playerEnemyCollisionY <= enemyDeathLimitY) && collidedObject.CompareTag("player"))
         {
-            isKill = true;
-            KillPlayer();
+            if (!isDead)
+            {
+                isKill = true;
+                KillPlayer();
+            }   
         }
 
         yield return null;
