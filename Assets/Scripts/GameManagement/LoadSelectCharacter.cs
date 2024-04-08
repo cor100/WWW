@@ -17,6 +17,8 @@ public class LoadSelectCharacter : MonoBehaviour
         print(selectedCharacter);
         GameObject prefab = charPrefabs[selectedCharacter];
         GameObject clone = Instantiate(prefab, startPoint.position, Quaternion.identity);
+        print(selectedCharacter);
+
     }
 
     // Update is called once per frame

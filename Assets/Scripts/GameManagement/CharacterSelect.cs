@@ -51,7 +51,7 @@ public class CharacterSelect : MonoBehaviour
     // Start is called before the first frame update
     public void StartButton()
     {
-        PlayerPrefs.GetInt("selectedCharacter", selectedCharacter);
+        PlayerPrefs.SetInt("selectedCharacter", selectedCharacter);
         SceneManager.LoadScene(nextSceneName, LoadSceneMode.Single);
 
     }
