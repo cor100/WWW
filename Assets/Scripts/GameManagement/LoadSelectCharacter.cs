@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Reflection.Emit;
+using Cinemachine;
 using TMPro;
 using UnityEngine;
 
@@ -17,6 +18,7 @@ public class LoadSelectCharacter : MonoBehaviour
         print(selectedCharacter);
         GameObject prefab = charPrefabs[selectedCharacter];
         GameObject clone = Instantiate(prefab, startPoint.position, Quaternion.identity);
+        GetComponent<CinemachineVirtualCamera>().Follow = clone.transform;
         print(selectedCharacter);
 
     }
