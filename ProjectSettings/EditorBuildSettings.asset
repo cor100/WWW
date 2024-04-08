@@ -9,9 +9,15 @@ EditorBuildSettings:
     path: Assets/Scenes/Test/SampleScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
+    path: Assets/Scenes/Levels/E_Level1.unity
+    guid: 5872f0db2c1e640bb8f8c96e18e1b595
+  - enabled: 1
     path: Assets/Scenes/Levels/AldoScene2.unity
     guid: cd2df9eebbcaa4de49e5004b1245b1d6
   - enabled: 1
     path: Assets/Scenes/Levels/VictoryScene.unity
     guid: fe7c86401decb465aae94d8121e760bb
+  - enabled: 1
+    path: Assets/Scenes/Levels/Start.unity
+    guid: 8f4d7a2be24df499cbbae34a64605f96
   m_configObjects: {}
