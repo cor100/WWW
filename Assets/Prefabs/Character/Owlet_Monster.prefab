@@ -10132,7 +10132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd1281cd1ad12496f8d92b7a5f7d2497, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 3.5
+  jumpForce: 3.4
   jumpSoundEffect: {fileID: 1700094824616422374}
   numJumps: 1
 --- !u!114 &8418340351013969478
