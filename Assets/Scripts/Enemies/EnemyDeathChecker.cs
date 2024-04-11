@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class EnemyDeathChecker : EnemyKillChecker
 {
-    //private bool isDead = false;
     private int characterStrength;
 
     protected override void OnCollisionEnter2D(Collision2D collision)
@@ -12,7 +11,7 @@ public class EnemyDeathChecker : EnemyKillChecker
         playerEnemyCollisionY = collision.GetContact(0).point.y;
         enemyDeathLimitY = enemyCollider.bounds.max.y - jumpDeathBuffer;
         collidedObject = collision.gameObject;
-        characterStrength = collidedObject.GetComponent<CharStats>().ReturnCharacterStrength();
+        characterStrength = charStats.ReturnCharacterStrength();
 
         CheckDeathStatus();
     }
@@ -26,6 +25,7 @@ public class EnemyDeathChecker : EnemyKillChecker
             enemyStats.DecreaseHealth(characterStrength);
             if (enemyStats.ReturnDeathStatus())
             {
+                charStats.UpdatePointsCollected();
                 StartCoroutine(AnimateAndDestroy());
             }
         }
