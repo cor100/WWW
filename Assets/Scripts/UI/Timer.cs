@@ -11,7 +11,8 @@ public class Timer : MonoBehaviour
     public float timeRemaining = 10;
     public TextMeshProUGUI timerText;
     private bool _timerIsRunning = false;
-    private bool _hasNotSetOffShake = true;
+    private bool _hasNotStartFade = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,17 +31,24 @@ public class Timer : MonoBehaviour
             }else{
                 timeRemaining = 0;
                 _timerIsRunning = false;
-                _hasNotSetOffShake = true;
+                _hasNotStartFade = true;
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             
             }
 
-            // This sets off shaking at the 5 second timer
-            if (timeRemaining <= 5 && _hasNotSetOffShake)
+            // This changes background at 20 second mark
+            if (_hasNotStartFade && timeRemaining <= 20)
             {
-                CameraShake.Instance.ShakeCamera(1f, .5f);
-                _hasNotSetOffShake = false;
+                BackgroundChange.Instance.StartFade();
+                _hasNotStartFade = false;
             }
+
+            // This sets off shaking at the 5 second timer
+            if (timeRemaining <= 5)
+            {
+                CameraShake.Instance.ShakeCamera(.4f, .5f);
+            }
+
         } 
     }
 
@@ -49,5 +57,10 @@ public class Timer : MonoBehaviour
         float mins = Mathf.FloorToInt(time / 60);
         float seconds = Mathf.FloorToInt(time % 60);
         timerText.text = string.Format("{0:00}:{1:00}", mins, seconds);
+    }
+
+    public float getTime()
+    {
+        return timeRemaining;
     }
 }
