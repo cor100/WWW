@@ -35,7 +35,7 @@ public class EnemyMovement : MonoBehaviour
         GetNextTargetPosition();
         StartCoroutine(IMovingCoroutine());
         //isMovingRight = startByMovingRight;
-        enemySpriteRenderer = GetComponent<SpriteRenderer>();
+        enemySpriteRenderer = GetComponentInChildren<SpriteRenderer>();
         enemySpriteRenderer.flipX = !startByMovingRight;
     }
 
