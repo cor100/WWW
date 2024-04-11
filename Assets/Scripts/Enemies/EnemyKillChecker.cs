@@ -4,63 +4,57 @@ using UnityEngine;
 
 public class EnemyKillChecker : MonoBehaviour
 {
-    [SerializeField] private float jumpDeathBuffer;
-    [SerializeField] private float playerForceBounceFromAttack;
+    [SerializeField] protected float jumpDeathBuffer;
+    [SerializeField] protected float playerForceBounceFromAttack;
 
-    private float deathAnimationTime = 1;
+    protected float deathAnimationTime = 1;
+    protected Barrier barrier;
+    protected Collider2D enemyCollider;
+    protected EnemyStats enemyStats;
+    protected CharStats charStats;
+    protected EnemyAnimation enemyAnimator;
+
     private bool isKill = false;
-    private Barrier barrier;
-    private Collider2D enemyCollider;
-    private EnemyAnimation enemyAnimator;
 
-    private float playerEnemyCollisionY;
-    private float enemyDeathLimitY;
-    private GameObject collidedObject;
+    // variables relating to player collision with enemy
+    protected float playerEnemyCollisionY;
+    protected float enemyDeathLimitY;
+    protected GameObject collidedObject;
 
     void Start()
     {
         barrier = GetComponent<Barrier>();
-        enemyAnimator = GetComponent<EnemyAnimation>();
+        enemyStats = GetComponent<EnemyStats>();
         enemyCollider = GetComponent<Collider2D>();
+        enemyAnimator = GetComponent<EnemyAnimation>();
     }
 
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    protected virtual void OnCollisionEnter2D(Collision2D collision)
     {
         playerEnemyCollisionY = collision.GetContact(0).point.y;
         enemyDeathLimitY = enemyCollider.bounds.max.y - jumpDeathBuffer;
         collidedObject = collision.gameObject;
+        charStats = collision.gameObject.GetComponent<CharStats>();
 
-        print(playerEnemyCollisionY);
-        print(enemyDeathLimitY);
-
-        StartCoroutine(CheckDeathStatus());
+        CheckKillStatus();
     }
 
-    private IEnumerator CheckDeathStatus()
+    private void CheckKillStatus()
     {
-
-        if (playerEnemyCollisionY > enemyDeathLimitY)
+        if ((playerEnemyCollisionY <= enemyDeathLimitY) && collidedObject.CompareTag("player"))
         {
-            PlayerBounceFromAttack();
-            enemyAnimator.enemyDied(true);
-            yield return new WaitForSeconds(deathAnimationTime);
-            Destroy(gameObject);
-        }
+            if (!enemyStats.ReturnDeathStatus())
+            {
+                charStats.DecreaseCharacterHealth();
 
-        else if ((playerEnemyCollisionY <= enemyDeathLimitY) && collidedObject.CompareTag("player"))
-        {
-            isKill = true;
-            KillPlayer();
-        }
-
-        yield return null;
-    }
-
-    private void PlayerBounceFromAttack()
-    {
-        Rigidbody2D playerRB2D = collidedObject.GetComponent<Rigidbody2D>();
-        playerRB2D.AddForce(collidedObject.transform.up * playerForceBounceFromAttack, ForceMode2D.Impulse);
+                if (charStats.ReturnDeathStatus())
+                {
+                    isKill = true;
+                    KillPlayer();
+                }   
+            }
+        }       
     }
 
     private void KillPlayer()
@@ -69,6 +63,7 @@ public class EnemyKillChecker : MonoBehaviour
         {
             collidedObject.GetComponent<CharacterJump>().enabled = false;
             collidedObject.GetComponent<CharHorizontalMovement>().enabled = false;
+            collidedObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
             collidedObject.GetComponent<CharacterAnimator>().onPlayerIsMovingChanges(false);
             collidedObject.GetComponent<CharacterAnimator>().onPlayerGroundedChange(false);
             collidedObject.GetComponent<CharacterAnimator>().onPlayerDied(true);

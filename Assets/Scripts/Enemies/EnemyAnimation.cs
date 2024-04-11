@@ -13,4 +13,9 @@ public class EnemyAnimation : MonoBehaviour
     {
         enemyAnimator.SetBool("isDead", isDead);
     }
+
+    public void enemyHurt()
+    {
+        enemyAnimator.SetTrigger("isHurt");
+    }
 }

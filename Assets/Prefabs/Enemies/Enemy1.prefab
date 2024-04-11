@@ -16,6 +16,8 @@ GameObject:
   - component: {fileID: 4871604274281951143}
   - component: {fileID: 2234496822129015314}
   - component: {fileID: 3374757155360181524}
+  - component: {fileID: 5539371602736534768}
+  - component: {fileID: 8744274408378780016}
   m_Layer: 0
   m_Name: Enemy1
   m_TagString: Enemy
@@ -214,3 +216,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyAnimator: {fileID: 2234496822129015314}
+--- !u!114 &5539371602736534768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 496653354905507567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef36106386a3346c09e7651f801b81f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startHealth: 1
+--- !u!114 &8744274408378780016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 496653354905507567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d12db37fb109b4be4bf6e75b42943a38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpDeathBuffer: 0.1
+  playerForceBounceFromAttack: 2

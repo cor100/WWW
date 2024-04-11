@@ -17,6 +17,7 @@ public class Spikes : Barrier
         {
             collision.gameObject.GetComponent<CharacterJump>().enabled = false;
             collision.gameObject.GetComponent<CharHorizontalMovement>().enabled = false;
+            collision.gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
             collision.gameObject.GetComponent<CharacterAnimator>().onPlayerIsMovingChanges(false);
             collision.gameObject.GetComponent<CharacterAnimator>().onPlayerGroundedChange(false);
             collision.gameObject.GetComponent<CharacterAnimator>().onPlayerDied(true);
