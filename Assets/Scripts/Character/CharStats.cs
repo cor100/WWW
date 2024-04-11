@@ -12,6 +12,8 @@ public class CharStats : MonoBehaviour
 
     protected int charLevelHealth;
 
+    protected int pointsCollected = 0;
+
     protected bool isDead = false;
 
     // Start is called before the first frame update
@@ -60,5 +62,15 @@ public class CharStats : MonoBehaviour
     public bool ReturnDeathStatus()
     {
         return isDead;
+    }
+
+    public void UpdatePointsCollected(int pointsCollected = 1)
+    {
+        pointsCollected += pointsCollected;
+    }
+
+    public void ResetPointsCollected()
+    {
+        pointsCollected = 0;
     }
 }
