@@ -16,6 +16,8 @@ GameObject:
   - component: {fileID: 3936026269613125043}
   - component: {fileID: 4442515997679852989}
   - component: {fileID: 7277611086454863200}
+  - component: {fileID: 3101991156254386462}
+  - component: {fileID: 3772708902738200040}
   m_Layer: 0
   m_Name: Enemy2
   m_TagString: Untagged
@@ -214,3 +216,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyAnimator: {fileID: 5932573387179833771}
+--- !u!114 &3101991156254386462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5254757689250711194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d12db37fb109b4be4bf6e75b42943a38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpDeathBuffer: 0.1
+  playerForceBounceFromAttack: 1.5
+--- !u!114 &3772708902738200040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5254757689250711194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef36106386a3346c09e7651f801b81f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startHealth: 1
