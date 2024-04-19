@@ -5905,6 +5905,7 @@ GameObject:
   m_Component:
   - component: {fileID: 794401497}
   - component: {fileID: 794401496}
+  - component: {fileID: 794401498}
   m_Layer: 0
   m_Name: Virtual Camera
   m_TagString: Untagged
@@ -5967,6 +5968,18 @@ Transform:
   - {fileID: 1992148985}
   m_Father: {fileID: 2053045160}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &794401498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 794401495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80157e103a36945d6bc5abf3f09f44c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &863714917
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6208,6 +6221,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1025902822}
   - component: {fileID: 1025902823}
+  - component: {fileID: 1025902824}
   m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
@@ -6282,6 +6296,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1025902824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1025902821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e43b28e2f24e54dbe9e348f8f0c4b01a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeToRedAmt: 0
+  fadingSpeed: 0.05
 --- !u!1001 &1087625748
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13340,6 +13368,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1736077622}
   - component: {fileID: 1736077621}
+  - component: {fileID: 1736077623}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -13424,6 +13453,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &1736077623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1736077620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!1 &1812711456
 GameObject:
   m_ObjectHideFlags: 0
@@ -13543,6 +13595,7 @@ GameObject:
   - component: {fileID: 1992148985}
   - component: {fileID: 1992148987}
   - component: {fileID: 1992148986}
+  - component: {fileID: 1992148988}
   m_Layer: 0
   m_Name: cm
   m_TagString: Untagged
@@ -13620,6 +13673,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1992148988
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1992148984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68bb026fafb42b14791938953eaace77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NoiseProfile: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
+  m_PivotOffset: {x: 0, y: 0, z: 0}
+  m_AmplitudeGain: 0
+  m_FrequencyGain: 5
+  mNoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!1 &2053045159
 GameObject:
   m_ObjectHideFlags: 0
