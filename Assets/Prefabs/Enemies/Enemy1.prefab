@@ -150,7 +150,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wayPoints:
-  - {x: -8.368706, y: 0.558, z: 0}
+  - {x: -8.18, y: 0.558, z: 0}
   - {x: -6.55, y: 0.558, z: 0}
   arrivalThreshold: 0.001
   waitingSecondsPerPosition: 1

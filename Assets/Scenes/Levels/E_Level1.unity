@@ -308,14 +308,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy1
       objectReference: {fileID: 0}
-    - target: {fileID: 3611510704260056517, guid: a0dd7cb12c4cc45ae8552b364186e9ce, type: 3}
-      propertyPath: wayPoints.Array.data[0].x
-      value: -8.18
-      objectReference: {fileID: 0}
-    - target: {fileID: 5539371602736534768, guid: a0dd7cb12c4cc45ae8552b364186e9ce, type: 3}
-      propertyPath: startHealth
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5936274179703723413, guid: a0dd7cb12c4cc45ae8552b364186e9ce, type: 3}
       propertyPath: m_LocalPosition.x
       value: -8.18
