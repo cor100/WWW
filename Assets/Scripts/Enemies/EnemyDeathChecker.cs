@@ -11,6 +11,7 @@ public class EnemyDeathChecker : EnemyKillChecker
         playerEnemyCollisionY = collision.GetContact(0).point.y;
         enemyDeathLimitY = enemyCollider.bounds.max.y - jumpDeathBuffer;
         collidedObject = collision.gameObject;
+        charStats = collidedObject.GetComponent<CharStats>();
         characterStrength = charStats.ReturnCharacterStrength();
 
         CheckDeathStatus();
