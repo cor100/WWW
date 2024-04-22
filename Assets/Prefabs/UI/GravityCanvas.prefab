@@ -35,8 +35,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 11.698, y: -56.8}
-  m_SizeDelta: {x: 32.307, y: 32.3069}
+  m_AnchoredPosition: {x: 10.3, y: -40}
+  m_SizeDelta: {x: 22.3763, y: 22.3763}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8034551762858625340
 CanvasRenderer:
@@ -114,8 +114,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 36.1257, y: -39.36792}
-  m_SizeDelta: {x: 27.8515, y: 24.5359}
+  m_AnchoredPosition: {x: 33.506104, y: -37.06018}
+  m_SizeDelta: {x: 22.6123, y: 19.9204}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1803069914274425387
 CanvasRenderer:
@@ -214,7 +214,7 @@ GameObject:
   - component: {fileID: 5740325132797579650}
   - component: {fileID: 1505365114272015229}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Timer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -294,15 +294,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 28
+  m_fontSizeBase: 28
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -348,7 +348,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22884069d158c457883ff6111bc19e7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeRemaining: 59
+  timeRemaining: 90
   timerText: {fileID: 5740325132797579650}
 --- !u!1 &5584746916534763272
 GameObject:
@@ -552,8 +552,9 @@ GameObject:
   - component: {fileID: 4405231521707971560}
   - component: {fileID: 1076416033151349533}
   - component: {fileID: 9167965592228981437}
+  - component: {fileID: 8422787527644023545}
   m_Layer: 5
-  m_Name: CoinsRemain
+  m_Name: CoinsCollected
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -575,8 +576,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 43.5, y: -0.000025034}
-  m_SizeDelta: {x: 33.9564, y: 38.4846}
+  m_AnchoredPosition: {x: 34.5, y: 0.000015974}
+  m_SizeDelta: {x: 29.1989, y: 33.0927}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1076416033151349533
 CanvasRenderer:
@@ -635,15 +636,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 28
+  m_fontSizeBase: 28
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -677,3 +678,15 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &8422787527644023545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8766949588042376467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b46ba6c58a0b4e0c95be5cdfe8fb4e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
