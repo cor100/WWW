@@ -12,12 +12,9 @@ public class CharacterSelect : MonoBehaviour
     [SerializeField] private GameObject[] chars;
     [SerializeField] private GameObject[] stats;
     [SerializeField] TMP_Text charLabel;
-    [SerializeField] List<Vector2> health_strength;
     private string[] prefabNames = {"Owl", "Blue", "Pink"};
-    void Start(){
-        selectedCharacter = 0;
-        SetPlayerStats();
-    }
+
+
 
     public void NextCharacter(){
         chars[selectedCharacter].SetActive(false);
@@ -28,7 +25,8 @@ public class CharacterSelect : MonoBehaviour
         stats[selectedCharacter].SetActive(true);
 
         charLabel.text = prefabNames[selectedCharacter];
-        SetPlayerStats();
+        print(selectedCharacter);
+
     }
     public void PrevCharacter(){
         chars[selectedCharacter].SetActive(false);
@@ -42,14 +40,10 @@ public class CharacterSelect : MonoBehaviour
         stats[selectedCharacter].SetActive(true);
 
         charLabel.text = prefabNames[selectedCharacter];
-        SetPlayerStats();
+
+        print(selectedCharacter);
 
 
     }    
-    private void SetPlayerStats(){
-        PlayerPrefs.SetInt("selectedCharacter", selectedCharacter);
-        PlayerPrefs.SetInt("playerHealth", (int)health_strength[selectedCharacter][0]);
-        PlayerPrefs.SetInt("playerStrength", (int)health_strength[selectedCharacter][1]);
-    }
 
 }
