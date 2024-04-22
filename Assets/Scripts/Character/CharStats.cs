@@ -19,9 +19,15 @@ public class CharStats : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        charHealth = charStartHealth;
-        charStrength = charStartStrength;
-        charLevelHealth = charStartHealth;
+        charHealth = PlayerPrefs.GetInt("playerHealth");
+        charStrength = PlayerPrefs.GetInt("playerStrength");
+        charLevelHealth = PlayerPrefs.GetInt("playerHealth");
+    }
+    public void SetCharacterHealth(int health){
+        charHealth = health;
+    }
+    public void SetCharacterStrength(int strength){
+        charStrength = strength;
     }
 
     public int ReturnCharacterHealth()
