@@ -24,7 +24,7 @@ public class BackgroundChange : MonoBehaviour
         spriteRender = GetComponent<SpriteRenderer>();
         Color color = spriteRender.material.color;
 
-        color.r = 1f;
+        color.g = 1f;
         color.b = 1f;
 
         spriteRender.material.color = color;

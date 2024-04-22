@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameStats : MonoBehaviour
 {
-    private int pointsCollected = 0;
+    private static int pointsCollected = 0;
 
     public void UpdatePointsCollected()
     {
@@ -15,4 +15,8 @@ public class GameStats : MonoBehaviour
     {
         pointsCollected = 0;
     }
+    public static int GetPointsCollected(){
+        return pointsCollected;
+    }
+
 }
