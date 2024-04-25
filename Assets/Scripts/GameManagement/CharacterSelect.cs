@@ -25,6 +25,7 @@ public class CharacterSelect : MonoBehaviour
         stats[selectedCharacter].SetActive(false);
 
         selectedCharacter = (selectedCharacter + 1) % chars.Length;
+        print(selectedCharacter);
         chars[selectedCharacter].SetActive(true);
         stats[selectedCharacter].SetActive(true);
 
