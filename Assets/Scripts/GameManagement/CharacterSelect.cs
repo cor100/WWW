@@ -25,6 +25,7 @@ public class CharacterSelect : MonoBehaviour
         stats[selectedCharacter].SetActive(false);
 
         selectedCharacter = (selectedCharacter + 1) % chars.Length;
+        print(selectedCharacter);
         chars[selectedCharacter].SetActive(true);
         stats[selectedCharacter].SetActive(true);
 
@@ -47,6 +48,9 @@ public class CharacterSelect : MonoBehaviour
 
 
     }    
+    
+    // update the chosen character, character's health and strength, in PlayerPrefs to store for
+    // later use
     private void SetPlayerStats(){
         PlayerPrefs.SetInt("selectedCharacter", selectedCharacter);
         PlayerPrefs.SetInt("playerHealth", (int)health_strength[selectedCharacter][0]);

@@ -15,7 +15,8 @@ public class UpdateCoins : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        coinsCollected.text = GameStats.GetPointsCollected().ToString();
+        coinsCollected.text = PointStats.GetPointsCollected().ToString();
         
     }
+
 }
