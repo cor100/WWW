@@ -117,6 +117,10 @@ public class CharHorizontalMovement : MonoBehaviour
                 velChange.x = -airMovementSpeed;
             }
         }
+        if(!Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.RightArrow)){
+            characterRB2D.velocity = new Vector2(0, characterRB2D.velocity.y);
+
+        }
 
         velChange.y = characterRB2D.velocity.y;
         characterRB2D.velocity = velChange;

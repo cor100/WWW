@@ -14,6 +14,7 @@ public class LevelChange : MonoBehaviour
         // If the door is activated by the player going in, switch scenes.
         if (doorCollision.CompareTag("player"))
         {
+            PlayerPrefs.SetInt("pointsCollected", PointStats.GetPointsCollected());
             SceneManager.LoadScene(nextSceneName, LoadSceneMode.Single);
         }
 

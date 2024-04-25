@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CoinAnimator : MonoBehaviour
 {
     [SerializeField] private Sprite[] sprites;
+    
     private SpriteRenderer _coinSpriteRenderer;
-    private bool _isCoroutineRunning;
     private float animateDelay = 0.1f;
 
 
@@ -33,5 +34,6 @@ public class CoinAnimator : MonoBehaviour
             yield return new WaitForSeconds(animateDelay);
         }
     }
+    
     
 }

@@ -16,7 +16,7 @@ public class SceneLoader : MonoBehaviour
   
   public void StartGame()
     {
-        //PlayerPrefs.SetInt("selectedCharacter", CharacterSelect.selectedCharacter);
+        PlayerPrefs.SetInt("pointsCollected", 0);
         SceneManager.LoadScene(nextSceneName, LoadSceneMode.Single);
 
     }
