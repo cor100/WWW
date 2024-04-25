@@ -23,8 +23,14 @@ public class Coins : MonoBehaviour
 
     void Start(){
         pointStats = FindObjectOfType<PointStats>();
-        target = GameObject.FindWithTag("player");
+        StartCoroutine(findPlayer());
         collectDelayTime = 0.02f;
+    }
+    IEnumerator findPlayer(){
+        while(!GameObject.FindWithTag("player")){
+            yield return null;
+        }
+        target = GameObject.FindWithTag("player");
     }
     IEnumerator capturedCoin(){
         while(collectDelayTime > 0){
