@@ -173,7 +173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f517bda8e7f4e42518c5c9a74bb09361, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextSceneName: E_Level2
+  nextSceneName: Tutorial
 --- !u!1 &780119456 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 96023660368342557, guid: ccbef0fb80721460c86e0149c4467f99, type: 3}
