@@ -303,6 +303,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door
       objectReference: {fileID: 0}
+    - target: {fileID: 7198804630146152136, guid: a5e8df9774d3448d784703efdaa06979, type: 3}
+      propertyPath: nextSceneName
+      value: E_Level2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6611,6 +6615,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1397049409378591600, guid: 71263ba6aaeb74b4983e969bf384d1f4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.4746356
+      objectReference: {fileID: 0}
+    - target: {fileID: 1397049409378591600, guid: 71263ba6aaeb74b4983e969bf384d1f4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.321756
+      objectReference: {fileID: 0}
     - target: {fileID: 6492596085616940382, guid: 71263ba6aaeb74b4983e969bf384d1f4, type: 3}
       propertyPath: m_Name
       value: Cameras
@@ -6656,7 +6668,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 2542404804667430674, guid: 71263ba6aaeb74b4983e969bf384d1f4, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 71263ba6aaeb74b4983e969bf384d1f4, type: 3}
