@@ -6,6 +6,7 @@ public class EnemyKillChecker : MonoBehaviour
 {
     [SerializeField] protected float jumpDeathBuffer;
     [SerializeField] protected float playerForceBounceFromAttack;
+    [SerializeField] private AudioSource playerDeath;
 
     protected float deathAnimationTime = 1;
     protected Barrier barrier;
@@ -61,6 +62,7 @@ public class EnemyKillChecker : MonoBehaviour
     {
         if (isKill)
         {
+            playerDeath.Play();
             collidedObject.GetComponent<CharacterJump>().enabled = false;
             collidedObject.GetComponent<CharHorizontalMovement>().enabled = false;
             collidedObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
