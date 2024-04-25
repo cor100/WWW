@@ -999,6 +999,34 @@ PrefabInstance:
       propertyPath: stats.Array.data[2]
       value: 
       objectReference: {fileID: 1318445576}
+    - target: {fileID: 5432866668375938798, guid: ccbef0fb80721460c86e0149c4467f99, type: 3}
+      propertyPath: health_strength.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5432866668375938798, guid: ccbef0fb80721460c86e0149c4467f99, type: 3}
+      propertyPath: health_strength.Array.data[0].x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5432866668375938798, guid: ccbef0fb80721460c86e0149c4467f99, type: 3}
+      propertyPath: health_strength.Array.data[0].y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5432866668375938798, guid: ccbef0fb80721460c86e0149c4467f99, type: 3}
+      propertyPath: health_strength.Array.data[1].x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5432866668375938798, guid: ccbef0fb80721460c86e0149c4467f99, type: 3}
+      propertyPath: health_strength.Array.data[1].y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5432866668375938798, guid: ccbef0fb80721460c86e0149c4467f99, type: 3}
+      propertyPath: health_strength.Array.data[2].x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5432866668375938798, guid: ccbef0fb80721460c86e0149c4467f99, type: 3}
+      propertyPath: health_strength.Array.data[2].y
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5461351796099028525, guid: ccbef0fb80721460c86e0149c4467f99, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.8
