@@ -11,6 +11,7 @@ public class CharHorizontalMovement : MonoBehaviour
 
     [SerializeField] private float airMovementSpeed = 2;
     [SerializeField] private float groundMovementSpeed = 4;
+    [SerializeField] private AudioSource runningSoundEffect;
 
     private CharGroundChecker groundChecker;
     private Vector2 velChange = Vector2.zero;
@@ -48,6 +49,11 @@ public class CharHorizontalMovement : MonoBehaviour
             isWalkBuffer = false;
             velChange = Vector2.zero;
         }
+
+        if (!returnWalkingState())
+        {
+            runningSoundEffect.Stop();
+        }
     }
 
     private void CheckWalkBuffer()
@@ -76,10 +82,14 @@ public class CharHorizontalMovement : MonoBehaviour
         {
             hasMovedAlready = true;
         }
-        
 
         if (Input.GetKey(KeyCode.RightArrow))
         {
+            if (!runningSoundEffect.isPlaying)
+            {
+                runningSoundEffect.Play();
+            }
+
             if (charGravityChecker.returnGravityDown())
             {
                 characterSpriteRenderer.flipX = false;
@@ -99,6 +109,11 @@ public class CharHorizontalMovement : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.LeftArrow))
         {
+            if (!runningSoundEffect.isPlaying)
+            {
+                runningSoundEffect.Play();
+            }
+
             if (charGravityChecker.returnGravityDown())
             {
                 characterSpriteRenderer.flipX = true;

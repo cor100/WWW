@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyDeathChecker : EnemyKillChecker
 {
     private int characterStrength;
+    private bool isDead = false;
 
     protected override void OnCollisionEnter2D(Collision2D collision)
     {
@@ -34,6 +35,7 @@ public class EnemyDeathChecker : EnemyKillChecker
 
     private IEnumerator AnimateAndDestroy()
     {
+        isDead = true;
         enemyAnimator.enemyDied(true);
         yield return new WaitForSeconds(deathAnimationTime);
         Destroy(gameObject);
@@ -43,5 +45,11 @@ public class EnemyDeathChecker : EnemyKillChecker
     {
         Rigidbody2D playerRB2D = collidedObject.GetComponent<Rigidbody2D>();
         playerRB2D.AddForce(collidedObject.transform.up * playerForceBounceFromAttack, ForceMode2D.Impulse);
+        collidedObject.GetComponent<AudioSource>().Play();
+    }
+
+    public bool ReturnDeathStatus()
+    {
+        return isDead;
     }
 }
