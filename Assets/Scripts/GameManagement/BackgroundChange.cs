@@ -13,6 +13,8 @@ public class BackgroundChange : MonoBehaviour
     // Takes care of how fast it will fade
     public float fadingSpeed = 0.05f;
 
+    private bool fadedToRed = false;
+
     //private void Awake()
     //{
     //    Instance = this;
@@ -43,6 +45,8 @@ public class BackgroundChange : MonoBehaviour
 
             yield return new WaitForSeconds(fadingSpeed);
         }
+
+        fadedToRed = true;
       
     }
 
@@ -50,5 +54,10 @@ public class BackgroundChange : MonoBehaviour
    public void StartFade()
     {
         StartCoroutine("FadeToRed");
+    }
+
+   public bool returnRedBackgroundStatus()
+    {
+        return fadedToRed;
     }
 }
