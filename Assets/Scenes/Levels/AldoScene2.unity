@@ -165,7 +165,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: b6056674947946249bdad8fe2d3d44e8, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 5f59f85f2f6df4a80ba766e397aa8591, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.5
   m_Pitch: 1
@@ -13493,6 +13493,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1397049409378591600, guid: 71263ba6aaeb74b4983e969bf384d1f4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.4746356
+      objectReference: {fileID: 0}
+    - target: {fileID: 1397049409378591600, guid: 71263ba6aaeb74b4983e969bf384d1f4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.321756
+      objectReference: {fileID: 0}
     - target: {fileID: 6492596085616940382, guid: 71263ba6aaeb74b4983e969bf384d1f4, type: 3}
       propertyPath: m_Name
       value: Cameras
@@ -13538,7 +13546,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 2542404804667430674, guid: 71263ba6aaeb74b4983e969bf384d1f4, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 71263ba6aaeb74b4983e969bf384d1f4, type: 3}
