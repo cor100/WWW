@@ -13,8 +13,7 @@ public class Timer : MonoBehaviour
     private bool _timerIsRunning = false;
     private bool _hasNotStartFade = true;
 
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         _timerIsRunning = true;
 
@@ -26,6 +25,7 @@ public class Timer : MonoBehaviour
         if(_timerIsRunning){
             if (timeRemaining > 0){
                 timeRemaining -= Time.deltaTime;
+                timeRemaining = Mathf.Clamp(timeRemaining, 0f, Mathf.Infinity);
                 Console.WriteLine(timeRemaining);
                 DisplayTime(timeRemaining);
             }else{

@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Barrier : MonoBehaviour
 {
-    private float restartTime = 1;
+    private float restartTime = .3f;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -17,6 +17,7 @@ public class Barrier : MonoBehaviour
 
     public void ReloadScene()
     {
+        PointStats.ResetPointsCollected();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
