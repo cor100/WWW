@@ -9839,7 +9839,7 @@ GameObject:
   - component: {fileID: 3293851599020913698}
   - component: {fileID: 8761741482209982047}
   - component: {fileID: 5269768833294092471}
-  - component: {fileID: 2795614650049574626}
+  - component: {fileID: -7367659957678681957}
   - component: {fileID: 4400555397353072165}
   - component: {fileID: 7335551033993657952}
   - component: {fileID: 589025745454783539}
@@ -9870,7 +9870,7 @@ Transform:
   m_GameObject: {fileID: 8407511809150685185}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.009, y: -0.002, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -9950,8 +9950,8 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!60 &2795614650049574626
-PolygonCollider2D:
+--- !u!61 &-7367659957678681957
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -9982,7 +9982,7 @@ PolygonCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.021202467, y: -0.03311211}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -9992,28 +9992,9 @@ PolygonCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -0.059859857, y: 0.08546185}
-      - {x: -0.09732239, y: 0.050075147}
-      - {x: -0.104372695, y: 0.0014959909}
-      - {x: -0.09863055, y: -0.000050120056}
-      - {x: -0.09853697, y: -0.019951224}
-      - {x: -0.08033514, y: -0.047071338}
-      - {x: -0.08033521, y: -0.0470713}
-      - {x: -0.08041969, y: -0.068299085}
-      - {x: -0.08049974, y: -0.12042385}
-      - {x: -0.08128762, y: -0.16008162}
-      - {x: -0.018833488, y: -0.16206358}
-      - {x: 0.060873434, y: -0.16179144}
-      - {x: 0.06273086, y: -0.1112166}
-      - {x: 0.06321562, y: -0.08174668}
-      - {x: 0.051707417, y: -0.05820258}
-      - {x: 0.075539425, y: -0.023401218}
-      - {x: 0.07924948, y: 0.020115033}
-      - {x: 0.072459206, y: 0.020158414}
-      - {x: 0.04087023, y: 0.088072784}
-  m_UseDelaunayMesh: 0
+  serializedVersion: 2
+  m_Size: {x: 0.19161136, y: 0.25377578}
+  m_EdgeRadius: 0
 --- !u!50 &4400555397353072165
 Rigidbody2D:
   serializedVersion: 4

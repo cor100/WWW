@@ -5,9 +5,6 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/Test/SampleScene.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
     path: Assets/Scenes/Levels/Tutorial.unity
     guid: d638897a2b5ce4978b6707bc8babe7a2
@@ -18,12 +15,15 @@ EditorBuildSettings:
     path: Assets/Scenes/Levels/AldoScene2.unity
     guid: cd2df9eebbcaa4de49e5004b1245b1d6
   - enabled: 1
-    path: Assets/Scenes/Levels/VictoryScene.unity
-    guid: fe7c86401decb465aae94d8121e760bb
-  - enabled: 1
     path: Assets/Scenes/Levels/Start.unity
     guid: 8f4d7a2be24df499cbbae34a64605f96
   - enabled: 1
     path: Assets/Scenes/Levels/E_Level2.unity
     guid: 9e9cbdf97c87346a9bc5230a106db691
+  - enabled: 1
+    path: Assets/Scenes/Levels/VictoryScene.unity
+    guid: fe7c86401decb465aae94d8121e760bb
+  - enabled: 1
+    path: Assets/Scenes/Levels/End.unity
+    guid: 96326863f9aa840559564ac72aaae48d
   m_configObjects: {}
