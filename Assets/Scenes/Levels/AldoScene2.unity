@@ -5574,11 +5574,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2768287222492568984, guid: a5e8df9774d3448d784703efdaa06979, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.091
+      value: -4.502
       objectReference: {fileID: 0}
     - target: {fileID: 2768287222492568984, guid: a5e8df9774d3448d784703efdaa06979, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.37
+      value: -4.511
       objectReference: {fileID: 0}
     - target: {fileID: 2768287222492568984, guid: a5e8df9774d3448d784703efdaa06979, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5618,7 +5618,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7198804630146152136, guid: a5e8df9774d3448d784703efdaa06979, type: 3}
       propertyPath: nextSceneName
-      value: VictoryScreen
+      value: End
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13488,6 +13488,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -4.321756
       objectReference: {fileID: 0}
+    - target: {fileID: 5868642299735594294, guid: 71263ba6aaeb74b4983e969bf384d1f4, type: 3}
+      propertyPath: background
+      value: 
+      objectReference: {fileID: 1025902821}
     - target: {fileID: 6492596085616940382, guid: 71263ba6aaeb74b4983e969bf384d1f4, type: 3}
       propertyPath: m_Name
       value: Cameras
