@@ -18,6 +18,9 @@ public class LevelChangePointsAlloc : MonoBehaviour
 
     public GameObject error;
 
+    //public GameObject statsAllocation;
+    //private CharStats charStats;
+
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +29,7 @@ public class LevelChangePointsAlloc : MonoBehaviour
         pointsAllocation = pointsRemaining.GetComponent<PointsAllocation>();
         hpAllocation = hpAlloc.GetComponent<HPAllocation>();
         strAllocation = strAlloc.GetComponent<STRAllocation>();
+        //charStats = statsAllocation.GetComponent<CharStats>();
     }
 
     // Update is called once per frame
@@ -44,6 +48,8 @@ public class LevelChangePointsAlloc : MonoBehaviour
             PlayerPrefs.SetInt("playerStrength", strAllocation.ReturnNewMaxStrength());
             PlayerPrefs.SetInt("currentLevel", PlayerPrefs.GetInt("currentLevel") + 1);
             SceneManager.LoadScene(scenes[PlayerPrefs.GetInt("currentLevel")]);
+
+            //charStats.ResetCharacterHealth();
         }
         else
         {
