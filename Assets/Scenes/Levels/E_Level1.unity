@@ -5609,7 +5609,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fa21923a86834a019ac731b2bd94f69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextSceneName: AldoScene2
+  nextSceneName: AllocatePoints
 --- !u!61 &1975579035
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -15,32 +15,41 @@ public class Coins : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.CompareTag("player") && !isCoroutineRunning){
+        if(collision.gameObject.CompareTag("player") && !isCoroutineRunning)
+        {
             isCoroutineRunning = true;
             StartCoroutine(capturedCoin());
         }
     }
 
-    void Start(){
+    void Start()
+    {
         pointStats = FindObjectOfType<PointStats>();
         StartCoroutine(findPlayer());
         collectDelayTime = 0.02f;
     }
-    IEnumerator findPlayer(){
-        while(!GameObject.FindWithTag("player")){
+
+    IEnumerator findPlayer()
+    {
+        while(!GameObject.FindWithTag("player"))
+        {
             yield return null;
         }
         target = GameObject.FindWithTag("player");
     }
-    IEnumerator capturedCoin(){
-        while(collectDelayTime > 0){
+
+    IEnumerator capturedCoin()
+    {
+        while(collectDelayTime > 0)
+        {
             collectDelayTime -= 0.1f * Time.deltaTime;
             yield return null;
         }
-        if(collectDelayTime <= 0){
-
-            while(Vector3.Distance(target.transform.position, transform.position) >= 0.01f){
-                print(Vector3.Distance(target.transform.position, transform.position));
+        if(collectDelayTime <= 0)
+        {
+            while(Vector3.Distance(target.transform.position, transform.position) >= 0.01f)
+            {
+                //print(Vector3.Distance(target.transform.position, transform.position));
                 transform.position = Vector3.MoveTowards(transform.position, target.transform.position, moveDistancePerFrame * Time.deltaTime);
                 yield return null;
             }

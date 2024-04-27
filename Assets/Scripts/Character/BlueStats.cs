@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class OwletStats : CharStats
+public class BlueStats : CharStats
 {
-    public GameObject owlHPLevel;
-    public GameObject owlSTRLevel;
+    public GameObject blueHPLevel;
+    public GameObject blueSTRLevel;
 
     // Start is called before the first frame update
     void Start()
@@ -20,11 +20,11 @@ public class OwletStats : CharStats
 
     private void SetInitialHPLevel()
     {
-        owlHPLevel.GetComponent<TextMeshProUGUI>().text = charStartHealth.ToString();
+        blueHPLevel.GetComponent<TextMeshProUGUI>().text = charStartHealth.ToString();
     }
 
     private void SetInitialSTRLevel()
     {
-        owlSTRLevel.GetComponent<TextMeshProUGUI>().text = charStartStrength.ToString();
+        blueSTRLevel.GetComponent<TextMeshProUGUI>().text = charStartStrength.ToString();
     }
 }

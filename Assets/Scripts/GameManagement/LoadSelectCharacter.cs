@@ -23,6 +23,9 @@ public class LoadSelectCharacter : MonoBehaviour
         print(GetComponent<CinemachineVirtualCamera>());
         print(selectedCharacter);
 
+        Debug.Log("player Health" + PlayerPrefs.GetInt("playerHealth"));
+        Debug.Log("player Strength" + PlayerPrefs.GetInt("playerStrength"));
+        Debug.Log("points collected" + PlayerPrefs.GetInt("pointsCollected"));
     }
 
 }
