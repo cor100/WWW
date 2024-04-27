@@ -29,7 +29,7 @@ public class CharStats : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        charHealth = charStartHealth;
+        charHealth = PlayerPrefs.GetInt("playerHealth");
         pointStats = FindObjectOfType<PointStats>();
     }
 

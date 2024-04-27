@@ -17,7 +17,7 @@ public class LevelChange : MonoBehaviour
         {
             PlayerPrefs.SetInt("pointsCollected", PointStats.GetPointsCollected());
             SceneManager.LoadScene("AllocatePoints", LoadSceneMode.Single);
-        }else if(doorCollision.CompareTag("player")){
+        } else if(doorCollision.CompareTag("player")){
             SceneManager.LoadScene(firstLevel, LoadSceneMode.Single);
         
         }
