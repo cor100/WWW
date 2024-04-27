@@ -22,6 +22,7 @@ public class CharStats : MonoBehaviour
 
 
     protected bool isDead = false;
+    private PointStats pointStats;
 
 
 
@@ -29,6 +30,10 @@ public class CharStats : MonoBehaviour
     void Start()
     {
         charHealth = charStartHealth;
+        pointStats = FindObjectOfType<PointStats>();
+    }
+
+    void Update(){
     }
 
     public int ReturnCharacterHealth()
@@ -69,6 +74,8 @@ public class CharStats : MonoBehaviour
     public void UpdatePointsCollected(int pointsCollected = 1)
     {
         pointsCollected += pointsCollected;
+        pointStats.UpdatePointsCollected();
+
     }
 
     public void ResetPointsCollected()

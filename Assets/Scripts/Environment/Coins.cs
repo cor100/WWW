@@ -6,7 +6,7 @@ public class Coins : MonoBehaviour
 {
     public CharacterAnimator characterAnimator;
     private GameObject target;
-    private float moveDistancePerFrame = 1f;
+    private float moveDistancePerFrame = 3f;
 
     private PointStats pointStats;
     private bool isCoroutineRunning = false;

@@ -38,7 +38,6 @@ public class EnemyKillChecker : MonoBehaviour
         enemyDeathLimitY = enemyCollider.bounds.max.y;
         collidedObject = collision.gameObject;
         charStats = collision.gameObject.GetComponent<CharStats>();
-        print("engering check kill status");
         CheckKillStatus();
     }
 

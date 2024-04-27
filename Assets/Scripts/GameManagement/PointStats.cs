@@ -17,6 +17,10 @@ public class PointStats : MonoBehaviour
     {
         pointsCollected += 1;
     }
+    
+    public void UpdatePointsCollected(int points){
+        pointsCollected += points;
+    }
 
     public void SubtractPointsCollected()
     {

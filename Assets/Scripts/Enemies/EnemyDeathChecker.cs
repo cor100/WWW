@@ -28,7 +28,6 @@ public class EnemyDeathChecker : EnemyKillChecker
             enemyStats.DecreaseHealth(characterStrength);
             if (enemyStats.ReturnDeathStatus())
             {
-                charStats.UpdatePointsCollected();
                 StartCoroutine(AnimateAndDestroy());
             }
         }
@@ -40,6 +39,8 @@ public class EnemyDeathChecker : EnemyKillChecker
         enemyAnimator.enemyDied(true);
         yield return new WaitForSeconds(deathAnimationTime);
         Destroy(gameObject);
+        charStats.UpdatePointsCollected();
+
     }
 
     private void PlayerBounceFromAttack()
