@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class LevelChange : MonoBehaviour
 {
-
     [SerializeField] private string nextSceneName;
 
     // Will be an onTrigger collision
@@ -15,9 +14,8 @@ public class LevelChange : MonoBehaviour
         if (doorCollision.CompareTag("player"))
         {
             PlayerPrefs.SetInt("pointsCollected", PointStats.GetPointsCollected());
-            SceneManager.LoadScene(nextSceneName, LoadSceneMode.Single);
+            SceneManager.LoadScene("AllocatePoints", LoadSceneMode.Single);
         }
-
     }
 
 }

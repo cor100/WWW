@@ -6,7 +6,9 @@ public class PointStats : MonoBehaviour
 {
     private static int pointsCollected = 0;
     private static int initialPoints;
-    void Start(){
+
+    void Start()
+    {
         initialPoints = PlayerPrefs.GetInt("pointsCollected");
         pointsCollected = initialPoints;
     }
@@ -16,14 +18,18 @@ public class PointStats : MonoBehaviour
         pointsCollected += 1;
     }
 
-    public void SubtractPointsCollected(){
+    public void SubtractPointsCollected()
+    {
         pointsCollected -= 1;
     }
+
     public static void ResetPointsCollected()
     {
         pointsCollected = initialPoints;
     }
-    public static int GetPointsCollected(){
+
+    public static int GetPointsCollected()
+    {
         return pointsCollected;
     }
 

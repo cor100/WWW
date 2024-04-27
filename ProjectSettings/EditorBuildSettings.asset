@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/E_Level2.unity
     guid: 9e9cbdf97c87346a9bc5230a106db691
+  - enabled: 1
+    path: Assets/Scenes/Levels/AllocatePoints.unity
+    guid: 0b2e34a3e9f8943519d668b6e15dc2ab
   m_configObjects: {}
