@@ -38,6 +38,8 @@ public class LevelChangePointsAlloc : MonoBehaviour
     {
         if (PlayerPrefs.GetInt("pointsCollected") >= 0)
         {
+            print(PlayerPrefs.GetInt("currentLevel") + " current level");
+
             PlayerPrefs.SetInt("playerHealth", hpAllocation.ReturnNewMaxHealth());
             PlayerPrefs.SetInt("playerStrength", strAllocation.ReturnNewMaxStrength());
             PlayerPrefs.SetInt("currentLevel", PlayerPrefs.GetInt("currentLevel") + 1);

@@ -7077,6 +7077,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -4.321756
       objectReference: {fileID: 0}
+    - target: {fileID: 5868642299735594294, guid: 71263ba6aaeb74b4983e969bf384d1f4, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6492596085616940382, guid: 71263ba6aaeb74b4983e969bf384d1f4, type: 3}
       propertyPath: m_Name
       value: Cameras

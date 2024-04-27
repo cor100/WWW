@@ -33,18 +33,22 @@ public class EnemyKillChecker : MonoBehaviour
 
     protected virtual void OnCollisionEnter2D(Collision2D collision)
     {
+        print(collision.GetContact(0).point);
         playerEnemyCollisionY = collision.GetContact(0).point.y;
-        enemyDeathLimitY = enemyCollider.bounds.max.y - jumpDeathBuffer;
+        enemyDeathLimitY = enemyCollider.bounds.max.y;
         collidedObject = collision.gameObject;
         charStats = collision.gameObject.GetComponent<CharStats>();
-
+        print("engering check kill status");
         CheckKillStatus();
     }
 
     private void CheckKillStatus()
     {
+        print(playerEnemyCollisionY + "playerEnemyCollisionY");
+            print(enemyDeathLimitY + " enemyDeathY");
         if ((playerEnemyCollisionY <= enemyDeathLimitY) && collidedObject.CompareTag("player"))
         {
+            
             if (!enemyStats.ReturnDeathStatus())
             {
                 charStats.DecreaseCharacterHealth();

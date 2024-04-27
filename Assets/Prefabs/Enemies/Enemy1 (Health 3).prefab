@@ -68,8 +68,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8788076337374529961, guid: a0dd7cb12c4cc45ae8552b364186e9ce, type: 3}
+      propertyPath: playerDeath
+      value: 
+      objectReference: {fileID: 1947987971703539199}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a0dd7cb12c4cc45ae8552b364186e9ce, type: 3}
+--- !u!82 &1947987971703539199 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 4583936074423444601, guid: a0dd7cb12c4cc45ae8552b364186e9ce, type: 3}
+  m_PrefabInstance: {fileID: 2636238762484703622}
+  m_PrefabAsset: {fileID: 0}

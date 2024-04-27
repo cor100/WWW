@@ -1237,6 +1237,7 @@ MonoBehaviour:
   - E_Level2
   - E_Level1
   - AldoScene2
+  - VictoryScene 1
   pointsRemaining: {fileID: 2146632975}
   hpAlloc: {fileID: 1237413168}
   strAlloc: {fileID: 471566028}
