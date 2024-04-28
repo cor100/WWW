@@ -6,8 +6,8 @@ using Cinemachine;
 public class CameraShake : MonoBehaviour
 {
 
+    // Grabs necessary comments, like the virtual camera
     public static CameraShake Instance;
-
     private CinemachineVirtualCamera cinemachineVirtualCamera;
     private float shakeTimer;
 
@@ -17,10 +17,11 @@ public class CameraShake : MonoBehaviour
         cinemachineVirtualCamera = GetComponent<CinemachineVirtualCamera>();
     }
 
+   // Function dedicated to shaking camera 
    public void ShakeCamera(float intensity, float time)
     {
+        // Gets the camera machine and sets intensity and time of the shake
         CinemachineBasicMultiChannelPerlin cinemachineBasicMultiChannelPerlin = cinemachineVirtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
-
         cinemachineBasicMultiChannelPerlin.m_AmplitudeGain = intensity;
         shakeTimer = time;
     }
@@ -32,8 +33,8 @@ public class CameraShake : MonoBehaviour
             shakeTimer -= Time.deltaTime;
             if (shakeTimer <= 0f)
             {
+                // Reseting the camera shake as necessery 
                 CinemachineBasicMultiChannelPerlin cinemachineBasicMultiChannelPerlin = cinemachineVirtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
-
                 cinemachineBasicMultiChannelPerlin.m_AmplitudeGain = 0f;
             }
         }

@@ -19,9 +19,10 @@ public class CharacterSelect : MonoBehaviour
     {
         selectedCharacter = 0;
         PlayerPrefs.SetInt("selectedCharacter", selectedCharacter);
-        print(selectedCharacter);
     }
 
+    // Upon the press of the next arrow, switch to the stats and sprite of 
+    // the next character on the list
     public void NextCharacter()
     {
         chars[selectedCharacter].SetActive(false);
@@ -38,6 +39,8 @@ public class CharacterSelect : MonoBehaviour
         stats[selectedCharacter].GetComponent<CharStats>().SetStatsPlayerPrefs();
     }
 
+    // Upon the press of the back arrow, switch to the stats and sprite of 
+    // the previous character on the list
     public void PrevCharacter()
     {
         chars[selectedCharacter].SetActive(false);
@@ -57,24 +60,5 @@ public class CharacterSelect : MonoBehaviour
         stats[selectedCharacter].GetComponent<CharStats>().SetStatsPlayerPrefs();
     }    
     
-    //// update the chosen character, character's health and strength, in PlayerPrefs to store for
-    //// later use
-    //private void SetPlayerStats()
-    //{
-    //    //Debug.Log("Char Stats Health" + stats[selectedCharacter].GetComponent<CharStats>().ReturnCharacterHealth());
-    //    //Debug.Log("Char Stats Strength" + stats[selectedCharacter].GetComponent<CharStats>().ReturnCharacterStrength());
-
-    //    //PlayerPrefs.SetInt("selectedCharacter", selectedCharacter);
-    //    //PlayerPrefs.SetInt("playerHealth", stats[selectedCharacter].GetComponent<CharStats>().ReturnCharacterHealth());
-    //    //Debug.Log("Player Health" + PlayerPrefs.GetInt("playerHealth"));
-    //    ////PlayerPrefs.SetInt("playerHealth", (int)health_strength[selectedCharacter][0]);
-    //    //PlayerPrefs.SetInt("playerStrength", stats[selectedCharacter].GetComponent<CharStats>().ReturnCharacterStrength());
-    //    //Debug.Log("Player Strength" + PlayerPrefs.GetInt("playerStrength"));
-    //    ////PlayerPrefs.SetInt("playerStrength", (int)health_strength[selectedCharacter][1]);
-    //    //PlayerPrefs.SetInt("pointsCollected", 0);
-
-    //    //stats[selectedCharacter].GetComponent<CharStats>().SetStatsPlayerPrefs();
-
-    //}
 
 }

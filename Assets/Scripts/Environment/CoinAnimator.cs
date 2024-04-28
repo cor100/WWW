@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
+// CoinAnimator animates the spin of the coin
 public class CoinAnimator : MonoBehaviour
 {
     [SerializeField] private Sprite[] sprites;

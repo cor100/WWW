@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyDeathChecker : EnemyKillChecker
 {
+    [SerializeField] ParticleSystem deathParticles;
     private int characterStrength;
     private bool isDead = false;
 
@@ -37,6 +38,8 @@ public class EnemyDeathChecker : EnemyKillChecker
     {
         isDead = true;
         enemyAnimator.enemyDied(true);
+        //Instantiate(deathParticles, transform.position, Quaternion.identity);
+
         yield return new WaitForSeconds(deathAnimationTime);
         Destroy(gameObject);
         charStats.UpdatePointsCollected();
