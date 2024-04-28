@@ -20,11 +20,13 @@ public class Timer : MonoBehaviour
     }
 
     // Update is called once per frame
+    // Count down on timer 
     void Update()
     {
         if(_timerIsRunning){
             if (timeRemaining > 0){
                 timeRemaining -= Time.deltaTime;
+                // Clamp time to ensure display does not go out of bounds
                 timeRemaining = Mathf.Clamp(timeRemaining, 0f, Mathf.Infinity);
                 Console.WriteLine(timeRemaining);
                 DisplayTime(timeRemaining);
@@ -52,6 +54,7 @@ public class Timer : MonoBehaviour
         } 
     }
 
+    // Display time in 00:00
     private void DisplayTime(float time)
     {
         float mins = Mathf.FloorToInt(time / 60);

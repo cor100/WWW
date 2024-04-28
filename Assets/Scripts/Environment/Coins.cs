@@ -29,6 +29,7 @@ public class Coins : MonoBehaviour
         collectDelayTime = 0.02f;
     }
 
+    // Ensure that player exists
     IEnumerator findPlayer()
     {
         while(!GameObject.FindWithTag("player"))
@@ -38,6 +39,7 @@ public class Coins : MonoBehaviour
         target = GameObject.FindWithTag("player");
     }
 
+    // If player gets the coin, have coin follow player and update points 
     IEnumerator capturedCoin()
     {
         while(collectDelayTime > 0)

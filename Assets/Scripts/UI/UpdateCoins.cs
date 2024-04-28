@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+// Update display of the number of coins collected
 public class UpdateCoins : MonoBehaviour
 {
     private TextMeshProUGUI coinsCollected;

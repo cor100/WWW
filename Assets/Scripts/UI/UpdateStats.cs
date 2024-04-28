@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UpdateStats : MonoBehaviour
@@ -13,8 +14,8 @@ public class UpdateStats : MonoBehaviour
     //[SerializeField] GameObject strBar;
     private Slider hpSlider;
     private Slider strSlider;
-
-    // assign values of the HP and STR to be the correct ones at level start
+    private GameObject player;
+    // assign values of the HP and STR to be the correct ones at level
     void Start()
     {
         if(hpBar){
@@ -39,12 +40,20 @@ public class UpdateStats : MonoBehaviour
 
     }
 
-    // Update health value as it changes
+    // Update is called once per frame
+    // Change health levels shown on HP bar as player gets hit
     void Update()
-    {
-        int health = GameObject.FindWithTag("player").GetComponent<CharStats>().ReturnCharacterHealth();
-        if(hpSlider){hpSlider.value = health;}
-        if(hpLevel){hpLevel.GetComponent<TextMeshProUGUI>().text = health.ToString();}
+    {   
+       updateHealthUI();
+    }
+
+    private void updateHealthUI(){
+        if(GameObject.FindWithTag("player")){
+            int health = GameObject.FindWithTag("player").GetComponent<CharStats>().ReturnCharacterHealth();
+            if(hpSlider){hpSlider.value = health;}
+            if(hpLevel){hpLevel.GetComponent<TextMeshProUGUI>().text = health.ToString();}
+
+        }
     }
 
 }
