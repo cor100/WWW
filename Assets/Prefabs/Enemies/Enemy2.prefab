@@ -266,6 +266,7 @@ MonoBehaviour:
   jumpDeathBuffer: 0.1
   playerForceBounceFromAttack: 1.5
   playerDeath: {fileID: 0}
+  deathParticles: {fileID: 205924576889130678, guid: a0dd7cb12c4cc45ae8552b364186e9ce, type: 3}
 --- !u!114 &3772708902738200040
 MonoBehaviour:
   m_ObjectHideFlags: 0

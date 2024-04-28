@@ -8,7 +8,7 @@ public class EnemyKillChecker : MonoBehaviour
     [SerializeField] protected float playerForceBounceFromAttack;
     [SerializeField] private AudioSource playerDeath;
 
-    protected float deathAnimationTime = 1;
+    protected float deathAnimationTime = 0.5f;
     protected Barrier barrier;
     protected Collider2D enemyCollider;
     protected EnemyStats enemyStats;
