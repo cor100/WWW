@@ -37,18 +37,22 @@ public class EnemyStats : MonoBehaviour
         
     }
 
+    // Updates the color
     private void updateColor()
     {
         switch (currentHealth)
         {
+            // Red character for health of 3
             case 3:
-                spriteRender.material.color = new Color(1f, 0f, 0f); // Red
+                spriteRender.material.color = new Color(1f, 0f, 0f); 
                 break;
+            // Yellow character for health of 2
             case 2:
-                spriteRender.material.color = new Color(1f, 1f, 0f); // Yellow
+                spriteRender.material.color = new Color(1f, 1f, 0f); 
                 break;
+            // Green character for health of 1
             case 1:
-                spriteRender.material.color = new Color(1f, 1f, 1f); // Green
+                spriteRender.material.color = new Color(1f, 1f, 1f); 
                 break;
         }
     }
