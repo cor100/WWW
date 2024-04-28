@@ -22,11 +22,6 @@ public class LoadSelectCharacter : MonoBehaviour
         GameObject clone = Instantiate(prefab, startPoint.position, Quaternion.identity);
         // assign camera to follow player
         cinemachineVirtualCamera.Follow = clone.transform;
-
-
-        // Debug.Log("player Health" + PlayerPrefs.GetInt("playerHealth"));
-        // Debug.Log("player Strength" + PlayerPrefs.GetInt("playerStrength"));
-        // Debug.Log("points collected" + PlayerPrefs.GetInt("pointsCollected"));
     }
 
 }

@@ -8,6 +8,8 @@ public class CameraBackgroundChange : MonoBehaviour
     private BackgroundChange backgroundChange;
     private Color redBackground = new(146f/255f, 10f/255f, 8f/255f);
 
+    // responsibility of class: changes camera background to red when background changes to red
+
     // Start is called before the first frame update
     void Start()
     {

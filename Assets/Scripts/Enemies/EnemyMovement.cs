@@ -9,8 +9,8 @@ public class EnemyMovement : MonoBehaviour
     private int wayPointsIndex = 0;
     private int wayPointsLength;
 
-    //[SerializeField] private int moveSpeed;
-    // When the distance between Enemy Pos & Target Pos is less than arrivalThreshold, consider Enemy Pos to be at Target Pos
+    // When the distance between Enemy Pos & Target Pos is less than arrivalThreshold,
+    // consider Enemy Pos to be at Target Pos
     [SerializeField] private float arrivalThreshold;
     [SerializeField] private float waitingSecondsPerPosition;
     [SerializeField] private float moveDistancePerFrame;
@@ -19,9 +19,9 @@ public class EnemyMovement : MonoBehaviour
     private Vector3 nextTargetPosition;
     private bool arrivedAtNextPos = false;
     private bool isAlive = true;
-    //private bool isMovingRight;
     private SpriteRenderer enemySpriteRenderer;
 
+    // to visualize the positions enemies will go to
     private void OnDrawGizmosSelected()
     {
         Gizmos.DrawSphere(wayPoints[0], (float) 0.1);
@@ -34,21 +34,12 @@ public class EnemyMovement : MonoBehaviour
         wayPointsLength = wayPoints.Count - 1;
         GetNextTargetPosition();
         StartCoroutine(IMovingCoroutine());
-        //isMovingRight = startByMovingRight;
         enemySpriteRenderer = GetComponentInChildren<SpriteRenderer>();
         enemySpriteRenderer.flipX = !startByMovingRight;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-    }
 
-    // method movingCoroutine
-        // if enemy is alive
-        // while distance between target position & my position > arrival threshold, move
-        // otherwise, wait
-        // use vector3.movetowards()
+    // enemy moving to and from specified positions
     private IEnumerator IMovingCoroutine()
     {
         while (isAlive)
@@ -91,8 +82,4 @@ public class EnemyMovement : MonoBehaviour
 
         nextTargetPosition = targetPosition;
     }
-
-    // on draw gizmo selected
-    // for each pos in waypoints, draws a sphere in that position with a certain size
-        // gizmos.drawSphere 
 }

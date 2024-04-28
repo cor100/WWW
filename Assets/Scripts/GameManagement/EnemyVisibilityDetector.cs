@@ -10,6 +10,8 @@ public class EnemyVisibilityDetector : MonoBehaviour
     //private List<bool> enemiesSoundsPlaying;
     private Camera mainCamera;
 
+    // responsibility of class: detect when enemies are on screen so as to play their audio when they are
+
     // Start is called before the first frame update
     void Start()
     {

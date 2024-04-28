@@ -8,6 +8,8 @@ public class OwletStats : CharStats
     public GameObject owlHPLevel;
     public GameObject owlSTRLevel;
 
+    // responsibility of class: keep track of this player's stats + initialize properly
+
     // Start is called before the first frame update
     void Start()
     {

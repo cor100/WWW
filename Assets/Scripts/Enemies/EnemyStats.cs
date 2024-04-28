@@ -33,11 +33,9 @@ public class EnemyStats : MonoBehaviour
             isDead = true;
         }
         updateColor();
-        
-        
     }
 
-    // Updates the color
+    // Updates the color of enemies to reflect its health status
     private void updateColor()
     {
         switch (currentHealth)

@@ -13,11 +13,14 @@ public class HPAllocation : MonoBehaviour
     public GameObject pointsRemaining;
     private PointsAllocation pointsAllocation;
 
-    // 3 is hardcoded, information comes from "info" UI in scene
-    private int healthCost = 3;
+    // 4 is hardcoded, information comes from "info" UI in scene
+    private int healthCost = 4;
     private Slider slider;
 
     private bool pointsUpdatedMethodCalled = false;
+
+    // responsibility of class: working with slider to allocate HP to player given
+    // a certain amount of points
 
     // Start is called before the first frame update
     void Start()
@@ -34,13 +37,12 @@ public class HPAllocation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // get newMaxHealth information from slider and store in this class
-        //UpdateNewMaxHealth();
-
+        // when the slider changes, call UpdateNewMaxHealth()
         slider.onValueChanged.AddListener(delegate { UpdateNewMaxHealth(); });
         pointsUpdatedMethodCalled = false;
     }
 
+    // for initialising how much slider is able to allocate based on current coins
     private void AllocateSliderStats()
     {
         // integer division in C# throws away the remainder
@@ -48,10 +50,9 @@ public class HPAllocation : MonoBehaviour
 
         slider.minValue = 0;
         slider.maxValue = maxPossibleAllocatedHealth;
-
-        //Debug.Log("InitialAllocateHP " + currentNumCoins + " " + healthCost + " " + maxPossibleAllocatedHealth);
     }
 
+    // updating max health via PlayerPrefs & PointsAllocation class
     private void UpdateNewMaxHealth()
     {
         newMaxHealth = currentHealth + (int) slider.value;
@@ -63,7 +64,6 @@ public class HPAllocation : MonoBehaviour
 
             currentNumCoins = PlayerPrefs.GetInt("pointsCollected");
             prevHealth = newMaxHealth;
-            //AllocateSliderStats();
         }   
     }
 
@@ -72,7 +72,7 @@ public class HPAllocation : MonoBehaviour
         return newMaxHealth;
     }
 
-    // returns how much health has increased by
+    // returns how much health has increased by as compared to previous allocation
     public int ReturnHealthChange()
     {
         return (prevHealth - newMaxHealth);

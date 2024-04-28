@@ -22,6 +22,9 @@ public class EnemyKillChecker : MonoBehaviour
     protected float enemyDeathLimitY;
     protected GameObject collidedObject;
 
+    // responsibility of class: to check if the enemy has killed player (from player coming
+    // into contact with it)
+
     void Start()
     {
         barrier = GetComponent<Barrier>();
@@ -31,6 +34,7 @@ public class EnemyKillChecker : MonoBehaviour
     }
 
 
+    // checking the type of collision (player jumping on top or player hitting it)
     protected virtual void OnCollisionEnter2D(Collision2D collision)
     {
         print(collision.GetContact(0).point);
@@ -41,6 +45,7 @@ public class EnemyKillChecker : MonoBehaviour
         CheckKillStatus();
     }
 
+    // check if enemy has successfully killed player
     private void CheckKillStatus()
     {
         print(playerEnemyCollisionY + "playerEnemyCollisionY");
@@ -61,6 +66,7 @@ public class EnemyKillChecker : MonoBehaviour
         }       
     }
 
+    // animate and destroy player, also disabling its movements during animation time
     private void KillPlayer()
     {
         if (isKill)
