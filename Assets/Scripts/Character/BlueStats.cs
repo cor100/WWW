@@ -8,6 +8,8 @@ public class BlueStats : CharStats
     public GameObject blueHPLevel;
     public GameObject blueSTRLevel;
 
+    // responsibility of class: keep track of this player's stats + initialize properly
+
     // Start is called before the first frame update
     void Start()
     {

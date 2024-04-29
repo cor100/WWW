@@ -12,13 +12,11 @@ public class StatsAllocation : MonoBehaviour
     public GameObject hpAlloc;
     public GameObject strAlloc;
 
+    // responsibility of class: to update the HP & STR numbers on screen
+
     // Start is called before the first frame update
     void Start()
     {
-        //Debug.Log("player Health" + PlayerPrefs.GetInt("playerHealth"));
-        //Debug.Log("player Strength" + PlayerPrefs.GetInt("playerStrength"));
-        //Debug.Log("points collected" + PlayerPrefs.GetInt("pointsCollected"));
-
         SetInitialHPLevel();
         SetInitialSTRLevel();
     }
@@ -32,24 +30,25 @@ public class StatsAllocation : MonoBehaviour
 
     private void SetInitialHPLevel()
     {
-        //Debug.Log("PlayerPrefHealth " + PlayerPrefs.GetInt("playerHealth"));
+        // obtaining previous health information from PlayerPrefs
         int health = PlayerPrefs.GetInt("playerHealth");
         hpLevel.GetComponent<TextMeshProUGUI>().text = health.ToString();
     }
 
     private void SetInitialSTRLevel()
     {
-        //Debug.Log("PlayerPrefStrength " + PlayerPrefs.GetInt("playerStrength"));
         int strength = PlayerPrefs.GetInt("playerStrength");
         strLevel.GetComponent<TextMeshProUGUI>().text = strength.ToString();
     }
 
+    // when there is NewMaxHealth, update HP
     private void UpdateHPLevel()
     {
         int newMaxHealth = hpAlloc.GetComponent<HPAllocation>().ReturnNewMaxHealth();
         hpLevel.GetComponent<TextMeshProUGUI>().text = newMaxHealth.ToString();
     }
 
+    // when there is NewMaxHealth, update STR
     private void UpdateSTRLevel()
     {
         int newMaxStrength = strAlloc.GetComponent<STRAllocation>().ReturnNewMaxStrength();

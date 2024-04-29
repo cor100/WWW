@@ -13,11 +13,14 @@ public class STRAllocation : MonoBehaviour
     public GameObject pointsRemaining;
     private PointsAllocation pointsAllocation;
 
-    // 2 is hardcoded, information comes from "info" UI in scene
-    private int strengthCost = 2;
+    // 3 is hardcoded, information comes from "info" UI in scene
+    private int strengthCost = 3;
     private Slider slider;
 
     private bool pointsUpdatedMethodCalled = false;
+
+    // responsibility of class: working with slider to allocate STR to player given
+    // a certain amount of points
 
     // Start is called before the first frame update
     void Start()
@@ -34,12 +37,12 @@ public class STRAllocation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //UpdateNewMaxStrength();
-
+        // when the slider changes, call UpdateNewMaxStrength()
         slider.onValueChanged.AddListener(delegate { UpdateNewMaxStrength(); });
         pointsUpdatedMethodCalled = false;
     }
 
+    // for initialising how much slider is able to allocate based on current coins
     private void AllocateSliderStats()
     {
         // integer division in C# throws away the remainder
@@ -47,10 +50,9 @@ public class STRAllocation : MonoBehaviour
 
         slider.minValue = 0;
         slider.maxValue = maxPossibleAllocatedHealth;
-
-        //Debug.Log("InitialAllocateSTR" + currentNumCoins + " " + strengthCost + " " + maxPossibleAllocatedHealth);
     }
 
+    // updating max strength via PlayerPrefs & PointsAllocation class
     private void UpdateNewMaxStrength()
     {
         newMaxStrength = currentStrength + (int) slider.value;
@@ -62,7 +64,6 @@ public class STRAllocation : MonoBehaviour
 
             currentNumCoins = PlayerPrefs.GetInt("pointsCollected");
             prevStrength = newMaxStrength;
-            //AllocateSliderStats();
         }
     }
 
@@ -71,7 +72,7 @@ public class STRAllocation : MonoBehaviour
         return newMaxStrength;
     }
 
-    // returns how much strength has increased by
+    // returns how much strength has increased by as compared to previous allocation
     public int ReturnStrengthChange()
     {
         return (prevStrength - newMaxStrength);

@@ -7,8 +7,9 @@ public class CharGravitySwitch : MonoBehaviour
     private Rigidbody2D characterRB2D;
     private bool isGravityBuffer;
     private CharGroundChecker groundChecker;
-    private CharacterAnimator characterAnimator;
     [SerializeField] public AudioSource gravitySoundEffect;
+
+    // responsibility of class: to switch the gravity of the player
 
     // Start is called before the first frame update
     void Start()

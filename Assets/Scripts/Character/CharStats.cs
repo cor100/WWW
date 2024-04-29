@@ -11,12 +11,6 @@ public class CharStats : MonoBehaviour
     // character health during the level (will fluctuate within each level)
     protected int charHealth;
 
-    // character strength during the level
-    //protected int charStrength;
-
-    // character's max health at the start of each level (will vary after points allocation)
-    //protected int charLevelHealth;
-
     // points collected from past & in level (will fluctuate within each level)
     protected int pointsCollected = 0;
 
@@ -24,16 +18,13 @@ public class CharStats : MonoBehaviour
     protected bool isDead = false;
     private PointStats pointStats;
 
-
+    // responsibility of class: to keep track of the player's health & strength stats
 
     // Start is called before the first frame update
     void Start()
     {
         charHealth = PlayerPrefs.GetInt("playerHealth");
         pointStats = FindObjectOfType<PointStats>();
-    }
-
-    void Update(){
     }
 
     public int ReturnCharacterHealth()
@@ -53,6 +44,7 @@ public class CharStats : MonoBehaviour
 
     public void ResetCharacterHealth()
     {
+        // using PlayerPrefs to keep track of variables across scenes
         charHealth = PlayerPrefs.GetInt("playerHealth");
     }
 
@@ -83,14 +75,11 @@ public class CharStats : MonoBehaviour
         pointsCollected = 0;
     }
 
+    // to use for initialising player stats after players have selected a character
     public void SetStatsPlayerPrefs()
     {
         PlayerPrefs.SetInt("playerHealth", charStartHealth);
-        //Debug.Log("6player Health" + PlayerPrefs.GetInt("playerHealth"));
-
         PlayerPrefs.SetInt("playerStrength", charStartStrength);
-        //Debug.Log("6player Strength" + PlayerPrefs.GetInt("playerStrength"));
-
         PlayerPrefs.SetInt("pointsCollected", 0);
         PlayerPrefs.SetInt("currentLevel", 0);
     }

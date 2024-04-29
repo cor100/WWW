@@ -8,6 +8,8 @@ public class PinkStats : CharStats
     public GameObject pinkHPLevel;
     public GameObject pinkSTRLevel;
 
+    // responsibility of class: keep track of this player's stats + initialize properly
+
     // Start is called before the first frame update
     void Start()
     {

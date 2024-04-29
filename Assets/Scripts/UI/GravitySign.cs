@@ -6,9 +6,6 @@ using UnityEngine.UI;
 public class GravitySign : MonoBehaviour
 {
     private RectTransform rectTransform;
-    //[SerializeField] private Image upSign;
-    //[SerializeField] private Image downSign;
-    //private CharGravityChecker gravityChecker;
     
 
     // Start is called before the first frame update
