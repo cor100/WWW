@@ -305,7 +305,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7198804630146152136, guid: a5e8df9774d3448d784703efdaa06979, type: 3}
       propertyPath: nextSceneName
-      value: E_Level2
+      value: Level 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4839,6 +4839,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6087144928654834494, guid: b0862b19b6fa14ab4a15018fe66bed97, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6087144928654834494, guid: b0862b19b6fa14ab4a15018fe66bed97, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6559825792851296682, guid: b0862b19b6fa14ab4a15018fe66bed97, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.9321647
@@ -4882,6 +4890,14 @@ PrefabInstance:
     - target: {fileID: 8796073036046144226, guid: b0862b19b6fa14ab4a15018fe66bed97, type: 3}
       propertyPath: m_Name
       value: UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 9032616386038525152, guid: b0862b19b6fa14ab4a15018fe66bed97, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9032616386038525152, guid: b0862b19b6fa14ab4a15018fe66bed97, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

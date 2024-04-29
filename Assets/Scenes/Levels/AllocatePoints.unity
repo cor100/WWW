@@ -1246,10 +1246,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scenes:
-  - E_Level1
-  - E_Level2
-  - AldoScene2
-  - VictoryScene 1
+  - Level 1
+  - Level 2
+  - Level 3
+  - End
   pointsRemaining: {fileID: 2146632975}
   hpAlloc: {fileID: 1237413168}
   strAlloc: {fileID: 471566028}
