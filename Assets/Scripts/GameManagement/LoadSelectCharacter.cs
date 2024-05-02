@@ -17,7 +17,7 @@ public class LoadSelectCharacter : MonoBehaviour
     {
         // Load selected character (from the start) based on PlayerPrefs
         int selectedCharacter = PlayerPrefs.GetInt("selectedCharacter");
-        print(selectedCharacter);
+
         GameObject prefab = charPrefabs[selectedCharacter];
         GameObject clone = Instantiate(prefab, startPoint.position, Quaternion.identity);
         // assign camera to follow player

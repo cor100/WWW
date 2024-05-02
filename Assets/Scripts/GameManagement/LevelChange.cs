@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 public class LevelChange : MonoBehaviour
 {
     [SerializeField] private string nextSceneName;
-    private string firstLevel = "E_Level1";
-    private string lastScene = "AldoScene2";
+    private string firstLevel = "Level 1";
+    private string lastScene = "Level 3";
     // Will be an onTrigger collision
     private void OnTriggerEnter2D(Collider2D doorCollision)
     {
