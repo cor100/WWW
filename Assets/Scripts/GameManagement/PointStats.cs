@@ -6,16 +6,19 @@ public class PointStats : MonoBehaviour
 {
     private static int pointsCollected = 0;
     private static int initialPoints;
+    private AudioSource coinAudio;
 
     void Start()
     {
         initialPoints = PlayerPrefs.GetInt("pointsCollected");
         pointsCollected = initialPoints;
+        coinAudio = GetComponent<AudioSource>();
     }
 
     public void UpdatePointsCollected()
     {
         pointsCollected += 1;
+        StartCoroutine(IPlaySound());
     }
 
     public void UpdatePointsCollected(int points){
@@ -37,5 +40,9 @@ public class PointStats : MonoBehaviour
         return pointsCollected;
     }
 
-
+    public IEnumerator IPlaySound()
+    {
+        yield return new WaitForSeconds(0.2f);
+        coinAudio.Play();
+    }
 }
