@@ -66,4 +66,14 @@ public class Timer : MonoBehaviour
     {
         return timeRemaining;
     }
+    
+    public void pauseTimer(){
+        _timerIsRunning = false;
+        print(_timerIsRunning);
+    }
+    public void resumeTimer(){
+        _timerIsRunning = true;
+        print(_timerIsRunning);
+
+    }
 }

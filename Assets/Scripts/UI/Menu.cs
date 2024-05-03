@@ -5,7 +5,6 @@ using Unity.VisualScripting;
 public class Menu : MonoBehaviour
 {
     [SerializeField] private GameObject gravityIcon;
-
     public void restart()
     {
         int sceneIndex = SceneManager.GetActiveScene().buildIndex;
@@ -16,4 +15,6 @@ public class Menu : MonoBehaviour
     {
         gravityIcon.SetActive(!gravityIcon.activeSelf);
     }
+
+    
 }
