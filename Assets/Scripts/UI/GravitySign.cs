@@ -23,6 +23,7 @@ public class GravitySign : MonoBehaviour
         UpdateSprite();
     }
 
+    // flips sprite upside dwn depending on gravity orientation
     private void UpdateSprite()
     {
         if(CharGravityChecker.Get().returnGravityDown())

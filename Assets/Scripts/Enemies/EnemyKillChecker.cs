@@ -6,8 +6,9 @@ public class EnemyKillChecker : MonoBehaviour
 {
     [SerializeField] protected float jumpDeathBuffer;
     [SerializeField] protected float playerForceBounceFromAttack;
+    [SerializeField] private AudioSource playerDeath;
 
-    protected float deathAnimationTime = 1;
+    protected float deathAnimationTime = 0.5f;
     protected Barrier barrier;
     protected Collider2D enemyCollider;
     protected EnemyStats enemyStats;
@@ -32,18 +33,21 @@ public class EnemyKillChecker : MonoBehaviour
 
     protected virtual void OnCollisionEnter2D(Collision2D collision)
     {
+        print(collision.GetContact(0).point);
         playerEnemyCollisionY = collision.GetContact(0).point.y;
-        enemyDeathLimitY = enemyCollider.bounds.max.y - jumpDeathBuffer;
+        enemyDeathLimitY = enemyCollider.bounds.max.y;
         collidedObject = collision.gameObject;
         charStats = collision.gameObject.GetComponent<CharStats>();
-
         CheckKillStatus();
     }
 
     private void CheckKillStatus()
     {
+        print(playerEnemyCollisionY + "playerEnemyCollisionY");
+            print(enemyDeathLimitY + " enemyDeathY");
         if ((playerEnemyCollisionY <= enemyDeathLimitY) && collidedObject.CompareTag("player"))
         {
+            
             if (!enemyStats.ReturnDeathStatus())
             {
                 charStats.DecreaseCharacterHealth();
@@ -61,6 +65,7 @@ public class EnemyKillChecker : MonoBehaviour
     {
         if (isKill)
         {
+            playerDeath.Play();
             collidedObject.GetComponent<CharacterJump>().enabled = false;
             collidedObject.GetComponent<CharHorizontalMovement>().enabled = false;
             collidedObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;

@@ -9839,7 +9839,7 @@ GameObject:
   - component: {fileID: 3293851599020913698}
   - component: {fileID: 8761741482209982047}
   - component: {fileID: 5269768833294092471}
-  - component: {fileID: 2795614650049574626}
+  - component: {fileID: -7367659957678681957}
   - component: {fileID: 4400555397353072165}
   - component: {fileID: 7335551033993657952}
   - component: {fileID: 589025745454783539}
@@ -9852,7 +9852,8 @@ GameObject:
   - component: {fileID: 329204608904774443}
   - component: {fileID: 1700094824616422374}
   - component: {fileID: 4695755058589533901}
-  - component: {fileID: 2321043457530811857}
+  - component: {fileID: 3531399937002753180}
+  - component: {fileID: 7822753748998761380}
   m_Layer: 3
   m_Name: Owlet_Monster
   m_TagString: player
@@ -9869,7 +9870,7 @@ Transform:
   m_GameObject: {fileID: 8407511809150685185}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.009, y: -0.002, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -9949,8 +9950,8 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!60 &2795614650049574626
-PolygonCollider2D:
+--- !u!61 &-7367659957678681957
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -9981,7 +9982,7 @@ PolygonCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.021202467, y: -0.03311211}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -9991,28 +9992,9 @@ PolygonCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -0.059859857, y: 0.08546185}
-      - {x: -0.09732239, y: 0.050075147}
-      - {x: -0.104372695, y: 0.0014959909}
-      - {x: -0.09863055, y: -0.000050120056}
-      - {x: -0.09853697, y: -0.019951224}
-      - {x: -0.08033514, y: -0.047071338}
-      - {x: -0.08033521, y: -0.0470713}
-      - {x: -0.08041969, y: -0.068299085}
-      - {x: -0.08049974, y: -0.12042385}
-      - {x: -0.08128762, y: -0.16008162}
-      - {x: -0.018833488, y: -0.16206358}
-      - {x: 0.060873434, y: -0.16179144}
-      - {x: 0.06273086, y: -0.1112166}
-      - {x: 0.06321562, y: -0.08174668}
-      - {x: 0.051707417, y: -0.05820258}
-      - {x: 0.075539425, y: -0.023401218}
-      - {x: 0.07924948, y: 0.020115033}
-      - {x: 0.072459206, y: 0.020158414}
-      - {x: 0.04087023, y: 0.088072784}
-  m_UseDelaunayMesh: 0
+  serializedVersion: 2
+  m_Size: {x: 0.19161136, y: 0.25377578}
+  m_EdgeRadius: 0
 --- !u!50 &4400555397353072165
 Rigidbody2D:
   serializedVersion: 4
@@ -10067,6 +10049,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   airMovementSpeed: 2
   groundMovementSpeed: 2
+  runningSoundEffect: {fileID: 3531399937002753180}
 --- !u!114 &8953725259266848697
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10172,7 +10155,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 08b3f17a51f7e184795f401851342c7d, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -10268,7 +10251,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 3ceea5b8be58fbb4da08011b332ca464, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -10352,7 +10335,103 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &2321043457530811857
+--- !u!82 &3531399937002753180
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8407511809150685185}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 785d8c83f20fa44578d3ca936be43cac, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.35
+  m_Pitch: 1.5
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &7822753748998761380
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10361,7 +10440,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8407511809150685185}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ceccef6574dd4626a0e2485450d5bb4, type: 3}
+  m_Script: {fileID: 11500000, guid: f8b67637f755c4603ad17dd6bb422145, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   charStartHealth: 1

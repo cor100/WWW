@@ -4,32 +4,41 @@ using UnityEngine;
 
 public class CharStats : MonoBehaviour
 {
+    // the health & strength stats of the character at level 1
     [SerializeField] protected int charStartHealth;
     [SerializeField] protected int charStartStrength;
 
+    // character health during the level (will fluctuate within each level)
     protected int charHealth;
-    protected int charStrength;
 
-    protected int charLevelHealth;
+    // character strength during the level
+    //protected int charStrength;
+
+    // character's max health at the start of each level (will vary after points allocation)
+    //protected int charLevelHealth;
+
+    // points collected from past & in level (will fluctuate within each level)
+    protected int pointsCollected = 0;
+
 
     protected bool isDead = false;
+    private PointStats pointStats;
+
+
 
     // Start is called before the first frame update
     void Start()
     {
-        charHealth = charStartHealth;
-        charStrength = charStartStrength;
-        charLevelHealth = charStartHealth;
+        charHealth = PlayerPrefs.GetInt("playerHealth");
+        pointStats = FindObjectOfType<PointStats>();
+    }
+
+    void Update(){
     }
 
     public int ReturnCharacterHealth()
     {
         return charHealth;
-    }
-
-    public int ReturnCharacterStrength()
-    {
-        return charStrength;
     }
 
     public void DecreaseCharacterHealth(int attackStrength=1)
@@ -44,21 +53,46 @@ public class CharStats : MonoBehaviour
 
     public void ResetCharacterHealth()
     {
-        charHealth = charLevelHealth;
+        charHealth = PlayerPrefs.GetInt("playerHealth");
     }
 
     public void IncreaseCharacterTotalHealth(int healthIncrease)
     {
-        charLevelHealth += healthIncrease;
+        PlayerPrefs.SetInt("playerHealth", PlayerPrefs.GetInt("playerHealth") + healthIncrease);
     }
 
     public void IncreaseCharacterStrength(int strengthIncrease)
     {
-        charStrength += strengthIncrease;
+        PlayerPrefs.SetInt("playerStrength", PlayerPrefs.GetInt("playerStrength") + strengthIncrease);
     }
 
     public bool ReturnDeathStatus()
     {
         return isDead;
     }
+
+    public void UpdatePointsCollected(int pointsCollected = 1)
+    {
+        pointsCollected += pointsCollected;
+        pointStats.UpdatePointsCollected();
+
+    }
+
+    public void ResetPointsCollected()
+    {
+        pointsCollected = 0;
+    }
+
+    public void SetStatsPlayerPrefs()
+    {
+        PlayerPrefs.SetInt("playerHealth", charStartHealth);
+        //Debug.Log("6player Health" + PlayerPrefs.GetInt("playerHealth"));
+
+        PlayerPrefs.SetInt("playerStrength", charStartStrength);
+        //Debug.Log("6player Strength" + PlayerPrefs.GetInt("playerStrength"));
+
+        PlayerPrefs.SetInt("pointsCollected", 0);
+        PlayerPrefs.SetInt("currentLevel", 0);
+    }
 }
+

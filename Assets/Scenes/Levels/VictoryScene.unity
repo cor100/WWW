@@ -998,6 +998,10 @@ PrefabInstance:
       propertyPath: characterAnimator
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 7645998160644250911, guid: 7b2ab7a9927734b508c0ecec62134d88, type: 3}
+      propertyPath: playerRb
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8407511809150685185, guid: 7b2ab7a9927734b508c0ecec62134d88, type: 3}
       propertyPath: m_Name
       value: Owlet_Monster
@@ -1022,7 +1026,8 @@ PrefabInstance:
     - {fileID: 7523546683354085364, guid: 7b2ab7a9927734b508c0ecec62134d88, type: 3}
     - {fileID: 5303809564749852352, guid: 7b2ab7a9927734b508c0ecec62134d88, type: 3}
     - {fileID: 8742091281343339370, guid: 7b2ab7a9927734b508c0ecec62134d88, type: 3}
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 1592930270161248002, guid: 7b2ab7a9927734b508c0ecec62134d88, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b2ab7a9927734b508c0ecec62134d88, type: 3}
@@ -1315,6 +1320,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f517bda8e7f4e42518c5c9a74bb09361, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nextSceneName: 
 --- !u!4 &1938532784
 Transform:
   m_ObjectHideFlags: 0

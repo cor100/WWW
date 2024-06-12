@@ -34,7 +34,7 @@ public class ParticleController : MonoBehaviour
     {
         counter += Time.deltaTime;
 
-        if ((Mathf.Abs(playerRb.velocity.x) > occurAfterVelocity) && groundChecker.returnGroundedState())
+        if (playerRb && (Mathf.Abs(playerRb.velocity.x) > occurAfterVelocity) && groundChecker.returnGroundedState())
         {
             movementParticle.Play();
             counter = 0;
