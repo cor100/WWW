@@ -15,14 +15,13 @@ public class LoadSelectCharacter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Load selected character (from the start) based on PlayerPrefs
         int selectedCharacter = PlayerPrefs.GetInt("selectedCharacter");
-        print(selectedCharacter);
+
         GameObject prefab = charPrefabs[selectedCharacter];
         GameObject clone = Instantiate(prefab, startPoint.position, Quaternion.identity);
+        // assign camera to follow player
         cinemachineVirtualCamera.Follow = clone.transform;
-        print(GetComponent<CinemachineVirtualCamera>());
-        print(selectedCharacter);
-
     }
 
 }

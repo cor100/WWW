@@ -14,6 +14,7 @@ public class CharacterJump : MonoBehaviour
     private float coyoteTime = 0.08f;
     private float coyoteTimeCounter;    
     private int numJumpsLeft;
+
     private void Start()
     {
         characterRB2D = GetComponent<Rigidbody2D>();
@@ -23,8 +24,6 @@ public class CharacterJump : MonoBehaviour
 
     private void Update()
     {   
-
-
         if(Input.GetKeyDown(KeyCode.Space) && numJumpsLeft > 0 && coyoteTimeCounter >= 0f){
             numJumpsLeft -=1;
             isJumpBuffer = true;
@@ -39,9 +38,6 @@ public class CharacterJump : MonoBehaviour
         {
             coyoteTimeCounter -= Time.deltaTime;
         }
-
-
-
     }
 
 

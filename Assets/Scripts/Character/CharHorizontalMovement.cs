@@ -9,8 +9,10 @@ public class CharHorizontalMovement : MonoBehaviour
     private bool isWalkBuffer;
     private bool isWalking;
 
+    // different speeds between moving in the air vs moving on the ground
     [SerializeField] private float airMovementSpeed = 2;
     [SerializeField] private float groundMovementSpeed = 4;
+    [SerializeField] private AudioSource runningSoundEffect;
 
     private CharGroundChecker groundChecker;
     private Vector2 velChange = Vector2.zero;
@@ -20,7 +22,7 @@ public class CharHorizontalMovement : MonoBehaviour
     public static bool hasMovedAlready;
     private static CharHorizontalMovement _instance;
 
-
+    // responsibility of class: character's horizontal movement from arrow key input
 
     // Start is called before the first frame update
     void Start()
@@ -48,8 +50,15 @@ public class CharHorizontalMovement : MonoBehaviour
             isWalkBuffer = false;
             velChange = Vector2.zero;
         }
+
+        if (!returnWalkingState())
+        {
+            runningSoundEffect.Stop();
+        }
     }
 
+
+    // checking input for wlaking functionality
     private void CheckWalkBuffer()
     {
         if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.LeftArrow))
@@ -58,6 +67,7 @@ public class CharHorizontalMovement : MonoBehaviour
         }
     }
 
+    // checking walking state so that the walking status may be returned & used in other classes
     private void CheckWalking()
     {
         if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.LeftArrow))
@@ -76,10 +86,14 @@ public class CharHorizontalMovement : MonoBehaviour
         {
             hasMovedAlready = true;
         }
-        
 
         if (Input.GetKey(KeyCode.RightArrow))
         {
+            if (!runningSoundEffect.isPlaying)
+            {
+                runningSoundEffect.Play();
+            }
+
             if (charGravityChecker.returnGravityDown())
             {
                 characterSpriteRenderer.flipX = false;
@@ -99,6 +113,11 @@ public class CharHorizontalMovement : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.LeftArrow))
         {
+            if (!runningSoundEffect.isPlaying)
+            {
+                runningSoundEffect.Play();
+            }
+
             if (charGravityChecker.returnGravityDown())
             {
                 characterSpriteRenderer.flipX = true;
@@ -116,6 +135,9 @@ public class CharHorizontalMovement : MonoBehaviour
             {
                 velChange.x = -airMovementSpeed;
             }
+        }
+        if(!Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.RightArrow)){
+            characterRB2D.velocity = new Vector2(0, characterRB2D.velocity.y);
         }
 
         velChange.y = characterRB2D.velocity.y;

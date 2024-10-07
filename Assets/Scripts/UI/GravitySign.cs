@@ -6,9 +6,6 @@ using UnityEngine.UI;
 public class GravitySign : MonoBehaviour
 {
     private RectTransform rectTransform;
-    //[SerializeField] private Image upSign;
-    //[SerializeField] private Image downSign;
-    //private CharGravityChecker gravityChecker;
     
 
     // Start is called before the first frame update
@@ -23,6 +20,7 @@ public class GravitySign : MonoBehaviour
         UpdateSprite();
     }
 
+    // flips sprite upside dwn depending on gravity orientation
     private void UpdateSprite()
     {
         if(CharGravityChecker.Get().returnGravityDown())

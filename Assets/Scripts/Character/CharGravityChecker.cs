@@ -8,6 +8,8 @@ public class CharGravityChecker : MonoBehaviour
     private Rigidbody2D characterRB2D;
     private static CharGravityChecker _instance;
 
+    // responsibiliy of class: to check the gravity status of the player
+
     private void Start()
     {
         _instance = this;

@@ -11,6 +11,9 @@ public class CharGroundChecker : MonoBehaviour
     private CharGravityChecker charGravityChecker;
     private Vector2 vectorForGroundedCheck;
 
+
+    // to help us visualize the distance needed between ground & player so that we can adjust
+    // distanceForGroundedCheck accordingly
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.cyan;
@@ -43,6 +46,8 @@ public class CharGroundChecker : MonoBehaviour
         }
     }
 
+
+    // using a raycast to check if player is hitting the ground
     private void CheckIfGrounded()
     {
         RaycastHit2D hit = Physics2D.Raycast(transform.position, vectorForGroundedCheck, distanceForGroundedCheck, groundMask);
